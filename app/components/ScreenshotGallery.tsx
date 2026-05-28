@@ -39,6 +39,13 @@ const tabs = [
     desc: 'Professional invoices generated instantly from any booking. Print or save as PDF in one click.',
     file: '/screenshots/invoice.png',
   },
+  {
+    id: 'activity',
+    label: 'Activity Log',
+    icon: '🔔',
+    desc: 'Log calls, notes, messages, and follow-ups on every lead. AI reply drafts let you respond to clients instantly.',
+    file: '/screenshots/leads-notes.png',
+  },
 ]
 
 export default function ScreenshotGallery() {
