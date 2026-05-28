@@ -1,12 +1,12 @@
 ﻿import Link from 'next/link'
 
 const features = [
-  { icon: '◎', color: '#6366f1', glow: 'rgba(99,102,241,0.12)', title: 'Lead Pipeline', desc: 'Track every inquiry from first message to booking. Move leads through stages and never lose a potential client again.' },
-  { icon: '◈', color: '#10b981', glow: 'rgba(16,185,129,0.12)', title: 'Bookings & Invoices', desc: 'Manage confirmed events, track deposits, balances, and generate professional invoices with one click.' },
-  { icon: '🤖', color: '#8b5cf6', glow: 'rgba(139,92,246,0.12)', title: 'Crafty AI', desc: 'AI that replies to Messenger in Taglish, qualifies leads, and auto-creates bookings when clients say PAID.' },
+  { icon: '◎', color: '#6366f1', glow: 'rgba(99,102,241,0.12)', title: 'Lead Pipeline', desc: 'Track every inquiry from first message to booking. List view or Kanban board — move leads through stages and never lose a client again.' },
+  { icon: '◈', color: '#10b981', glow: 'rgba(16,185,129,0.12)', title: 'Bookings & Invoices', desc: 'Manage confirmed events, track deposits and balances, and generate professional invoices with one click.' },
+  { icon: '🤖', color: '#8b5cf6', glow: 'rgba(139,92,246,0.12)', title: 'Crafty AI', desc: 'AI that replies to Messenger in Taglish, qualifies leads, and auto-creates bookings when clients say PAID. Train it from inside the app — no code needed.' },
   { icon: '◇', color: '#f59e0b', glow: 'rgba(245,158,11,0.12)', title: 'Finances', desc: 'Track personal income and expenses month by month. See your net profit, best months, and spending breakdown.' },
-  { icon: '◉', color: '#ec4899', glow: 'rgba(236,72,153,0.12)', title: 'Ad Performance', desc: 'Tag your Facebook ads and automatically see which ads bring in leads, bookings, and revenue.' },
-  { icon: '📅', color: '#06b6d4', glow: 'rgba(6,182,212,0.12)', title: 'Google Calendar Sync', desc: 'Confirmed bookings sync to your Google Calendar automatically. Never double-book an event.' },
+  { icon: '◉', color: '#ec4899', glow: 'rgba(236,72,153,0.12)', title: 'Ad Performance', desc: 'Tag your Facebook ads and automatically see which campaigns bring in leads, bookings, and revenue.' },
+  { icon: '📊', color: '#06b6d4', glow: 'rgba(6,182,212,0.12)', title: 'Dashboard & Analytics', desc: 'Conversion rates, monthly booking trends, lead source breakdown, and upcoming events — all at a glance.' },
 ]
 
 const steps = [
