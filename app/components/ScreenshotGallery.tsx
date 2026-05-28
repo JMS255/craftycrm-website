@@ -1,7 +1,6 @@
 'use client'
 
 import { useState } from 'react'
-import Image from 'next/image'
 
 const tabs = [
   {
@@ -95,15 +94,11 @@ export default function ScreenshotGallery() {
         </div>
 
         {/* Screenshot image */}
-        <div className="relative w-full" style={{ aspectRatio: '16/9' }}>
-          <Image
-            src={active.file}
-            alt={`Crafty CRM ${active.label} screenshot`}
-            fill
-            className="object-cover object-top"
-            sizes="(max-width: 768px) 100vw, 1200px"
-          />
-        </div>
+        <img
+          src={active.file}
+          alt={`Crafty CRM ${active.label} screenshot`}
+          style={{ width: '100%', display: 'block', objectFit: 'cover', objectPosition: 'top' }}
+        />
       </div>
     </div>
   )
