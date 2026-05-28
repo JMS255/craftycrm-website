@@ -1,4 +1,5 @@
 ﻿import Link from 'next/link'
+import ScreenshotGallery from './components/ScreenshotGallery'
 
 const features = [
   { icon: '◎', color: '#6366f1', glow: 'rgba(99,102,241,0.12)', title: 'Lead Pipeline', desc: 'Track every inquiry from first message to booking. List view or Kanban board — move leads through stages and never lose a client again.' },
@@ -70,6 +71,17 @@ export default function HomePage() {
               </div>
             ))}
           </div>
+        </div>
+      </section>
+
+      {/* Screenshot Gallery */}
+      <section className="py-20 px-5">
+        <div className="max-w-5xl mx-auto">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">See it in action</h2>
+            <p style={{ color: '#6b7280' }}>Real screenshots from the actual app — no mockups.</p>
+          </div>
+          <ScreenshotGallery />
         </div>
       </section>
 
