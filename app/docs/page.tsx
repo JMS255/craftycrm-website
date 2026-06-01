@@ -124,8 +124,12 @@ const sections = [
         body: 'On any lead\'s detail page, you can toggle Crafty AI off to manually take over the conversation. Toggle it back on to let Crafty resume.',
       },
       {
+        heading: 'CRM Actions mode',
+        body: 'Click the "⚡ CRM Actions" tab inside the chat widget to switch from business advisor to CRM assistant. In this mode, you can tell Crafty to add leads, update bookings, log payments, and query revenue — all in plain language. Example: "Add lead: Maria Santos, birthday June 28, ₱6,500 bundle." Crafty writes directly to your database and confirms what it did.',
+      },
+      {
         heading: 'Note',
-        body: 'Crafty AI is currently configured for James\'s photobooth business. Custom Crafty AI setup for other businesses is coming in a future update.',
+        body: 'Crafty AI Messenger is currently configured for James\'s photobooth business. Custom Crafty AI setup for other businesses is coming in a future update.',
       },
     ],
   },

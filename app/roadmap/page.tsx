@@ -25,7 +25,7 @@ const quarters = [
       { status: 'planned', text: 'Kanban board view — drag-and-drop lead cards across pipeline stages' },
       { status: 'planned', text: 'Dashboard charts — conversion rate, monthly trends, lead source breakdown' },
       { status: 'planned', text: 'Payments redesign — invoice status cards (Unpaid, Paid, Overdue, Total Revenue)' },
-      { status: 'planned', text: 'AI data entry — tell Crafty to bulk-import leads from a pasted list' },
+      { status: 'done', text: 'Crafty Assistant — CRM Actions mode: tell Crafty to add leads, update bookings, log payments, and query revenue in plain English' },
       { status: 'planned', text: 'Open beta — remove invite code, allow self-serve signups' },
     ],
   },
