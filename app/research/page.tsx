@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-type Tab = 'features' | 'ux'
+type Tab = 'features' | 'ux' | 'ui'
 
 const featureSections = [
   {
@@ -368,9 +368,20 @@ export default function ResearchPage() {
           style={{
             background: tab === 'ux' ? 'rgba(99,102,241,0.15)' : 'transparent',
             color: tab === 'ux' ? '#a5b4fc' : '#6b7280',
+            borderRight: '1px solid #1e1e2e',
           }}
         >
           UX Research
+        </button>
+        <button
+          onClick={() => setTab('ui')}
+          className="flex-1 py-2.5 text-sm font-medium transition-colors"
+          style={{
+            background: tab === 'ui' ? 'rgba(99,102,241,0.15)' : 'transparent',
+            color: tab === 'ui' ? '#a5b4fc' : '#6b7280',
+          }}
+        >
+          UI Design
         </button>
       </div>
 
@@ -494,6 +505,236 @@ export default function ResearchPage() {
               on their phone, in one hand, coming from a Facebook group, not knowing what a "pipeline stage" is.
             </p>
           </div>
+        </div>
+      )}
+
+      {/* UI Design Research */}
+      {tab === 'ui' && (
+        <div className="space-y-10">
+
+          {/* Core Problem */}
+          <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+            <p className="text-sm font-semibold text-white mb-2">The Core Problem</p>
+            <p className="text-sm leading-relaxed mb-3" style={{ color: '#9ca3af' }}>
+              Two issues — not one. First: <strong className="text-white">token inconsistency</strong> — half the app uses hardcoded Tailwind
+              (<code style={{ color: '#a5b4fc' }}>bg-white</code>, <code style={{ color: '#a5b4fc' }}>text-gray-900</code>, <code style={{ color: '#a5b4fc' }}>border-gray-200</code>)
+              while newer pages use CSS variables. Pages look built by different people.
+              Second: <strong className="text-white">no design identity</strong> — the indigo palette works but is identical to every other Tailwind app. Nothing says "Craftifyle."
+            </p>
+            <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>
+              <strong className="text-white">Fix Phase 1 (token unification) = 4 hours = 60% of the visual improvement.</strong> Everything else is polish on top.
+            </p>
+          </div>
+
+          {/* Redesign Phases */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Redesign Phases</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>In this exact order — maximum impact per hour spent</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { phase: '1', title: 'CSS Token Unification', time: '4 hrs', impact: 'Enormous', body: 'Kill every hardcoded bg-white, text-gray-900, border-gray-200. Replace with CSS variables. Creates instant consistency across all pages. Foundation for everything else.', color: '#ef4444' },
+                { phase: '2', title: 'Sidebar Redesign', time: '4 hrs', impact: 'High', body: 'New nav item active state (left 2px accent bar + accent-subtle bg + text brightens). Section labels as 11px uppercase tracked. Surface color separate from page. Bottom user row.', color: '#f97316' },
+                { phase: '3', title: 'Card System', time: '2 hrs', impact: 'High', body: 'One base card class: surface-100 background, border-default border, 14px radius, inset 0 1px 0 rgba(255,255,255,0.06) inner glow. Kill all rounded-xl (12px) and rounded-2xl (16px) inconsistencies.', color: '#fbbf24' },
+                { phase: '4', title: 'Table Refinement', time: '3 hrs', impact: 'High', body: 'Remove all vertical cell borders. Horizontal row separators only. Row hover = surface-200 background. Action buttons hidden by default, appear on row hover. Sticky header with backdrop-blur.', color: '#10b981' },
+                { phase: '5', title: 'Mobile Bottom Nav', time: '3 hrs', impact: 'High', body: '60px height + safe-area-inset. backdrop-blur. Proper 44×44px touch targets. Active = filled icon + accent color. Center tab as primary action.', color: '#6366f1' },
+                { phase: '6', title: 'Typography Pass', time: '2 hrs', impact: 'Medium', body: 'Body text 15px (not 16px). Headings: weight 600, letter-spacing -0.015em. ALL CAPS labels: 11px weight 500 letter-spacing 0.08em. font-feature-settings: "calt", "liga", "kern" on base.', color: '#8b5cf6' },
+                { phase: '7', title: 'Status Badge System', time: '1 hr', impact: 'Medium', body: 'Unified pill: muted background + matching text color + 9999px radius + px-2 py-0.5 text-xs font-medium. Apply to every status in every table and card.', color: '#a78bfa' },
+                { phase: '8', title: 'Skeleton Loaders', time: '3 hrs', impact: 'Medium', body: 'Replace every spinner with a skeleton that matches the exact shape of the loading content. CSS animated pulse. No more spinning circles — that\'s 2015.', color: '#6b7280' },
+              ].map((p, i) => (
+                <div key={p.phase} className="px-5 py-4 flex gap-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="w-8 h-8 rounded-lg flex items-center justify-center text-xs font-bold shrink-0 mt-0.5"
+                    style={{ background: p.color + '20', color: p.color }}>{p.phase}</div>
+                  <div className="flex-1 min-w-0">
+                    <div className="flex items-center gap-3 mb-1 flex-wrap">
+                      <p className="text-sm font-semibold text-white">{p.title}</p>
+                      <span className="text-xs px-2 py-0.5 rounded-full font-medium" style={{ background: p.color + '20', color: p.color }}>{p.time}</span>
+                      <span className="text-xs font-medium" style={{ color: (impactStyles[p.impact] || impactStyles['Medium']).color }}>{p.impact} impact</span>
+                    </div>
+                    <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{p.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Color Palette */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Color Palette Specification</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Exact hex values — implement these as CSS variables</p>
+            <div className="space-y-4">
+              {/* Accent shift */}
+              <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>Accent — Shift to Warmer Violet</p>
+                <p className="text-sm mb-3" style={{ color: '#9ca3af' }}>Move from raw Tailwind <code style={{ color: '#6366f1' }}>#6366f1</code> to <code style={{ color: '#7c6ff7' }}>#7c6ff7</code>. Same family, slightly warmer — looks intentional, not default.</p>
+                <div className="flex gap-3 flex-wrap">
+                  {[
+                    { name: '--accent-primary', hex: '#7c6ff7', label: 'Brand' },
+                    { name: '--accent-hover', hex: '#9589f9', label: 'Hover' },
+                    { name: '--accent-muted', hex: 'rgba(124,111,247,0.15)', label: 'Ghost bg', display: '#7c6ff726' },
+                    { name: '--accent-subtle', hex: 'rgba(124,111,247,0.08)', label: 'Selected', display: '#7c6ff714' },
+                  ].map(c => (
+                    <div key={c.name} className="flex items-center gap-2">
+                      <div className="w-8 h-8 rounded-lg border" style={{ background: c.display || c.hex, borderColor: '#1e1e2e' }} />
+                      <div>
+                        <p className="text-xs font-mono" style={{ color: '#a5b4fc' }}>{c.hex}</p>
+                        <p className="text-xs" style={{ color: '#6b7280' }}>{c.label}</p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Surface ladder */}
+              <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>Dark Surface Ladder (5 levels — no shadows, borders only)</p>
+                <div className="space-y-2">
+                  {[
+                    { name: 'Page bg', hex: '#09090f' },
+                    { name: 'Card', hex: '#0f0f17' },
+                    { name: 'Sidebar/elevated', hex: '#141420' },
+                    { name: 'Hover state', hex: '#1a1a2a' },
+                    { name: 'Active/selected', hex: '#1f1f33' },
+                  ].map(s => (
+                    <div key={s.name} className="flex items-center gap-3">
+                      <div className="w-6 h-6 rounded" style={{ background: s.hex, border: '1px solid rgba(255,255,255,0.1)' }} />
+                      <code className="text-xs" style={{ color: '#a5b4fc' }}>{s.hex}</code>
+                      <span className="text-xs" style={{ color: '#6b7280' }}>{s.name}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+              {/* Borders */}
+              <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+                <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#6b7280' }}>Borders (opacity-based — works in both modes)</p>
+                <div className="space-y-2">
+                  {[
+                    { name: '--border-subtle', val: 'rgba(255,255,255,0.05)', use: 'Card separators' },
+                    { name: '--border-default', val: 'rgba(255,255,255,0.08)', use: 'Standard borders' },
+                    { name: '--border-strong', val: 'rgba(255,255,255,0.14)', use: 'Inputs, focus' },
+                    { name: '--border-emphasis', val: 'rgba(255,255,255,0.24)', use: 'Active/selected' },
+                  ].map(b => (
+                    <div key={b.name} className="flex items-center gap-3">
+                      <code className="text-xs w-48 shrink-0" style={{ color: '#a5b4fc' }}>{b.name}</code>
+                      <span className="text-xs" style={{ color: '#9ca3af' }}>{b.val}</span>
+                      <span className="text-xs" style={{ color: '#6b7280' }}>{b.use}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          {/* Typography */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Typography Scale</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Keep Geist — fix the usage. Hierarchy through size, not weight.</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { token: 'Display', size: '30px', weight: '600', ls: '-0.02em', use: 'Page titles (rare)' },
+                { token: 'text-2xl', size: '24px', weight: '600', ls: '-0.015em', use: 'Section headings' },
+                { token: 'text-xl', size: '20px', weight: '600', ls: '-0.01em', use: 'Card headers' },
+                { token: 'text-base', size: '15px ⬅ not 16px', weight: '400', ls: '0', use: 'Body text — 15px is tighter, more premium' },
+                { token: 'text-sm', size: '13px', weight: '400', ls: '0.005em', use: 'Labels, table cells' },
+                { token: 'text-xs', size: '11px', weight: '500', ls: '0.04em + UPPERCASE', use: 'Badges, section labels, tags' },
+              ].map((t, i) => (
+                <div key={t.token} className="px-5 py-3 flex items-center gap-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <code className="text-xs w-20 shrink-0" style={{ color: '#a5b4fc' }}>{t.token}</code>
+                  <span className="text-xs w-36 shrink-0" style={{ color: '#9ca3af' }}>{t.size} / w{t.weight}</span>
+                  <span className="text-xs flex-1" style={{ color: '#6b7280' }}>{t.use}</span>
+                </div>
+              ))}
+            </div>
+            <p className="text-xs mt-3 px-1" style={{ color: '#6b7280' }}>
+              Add to base CSS: <code style={{ color: '#a5b4fc' }}>font-feature-settings: "calt", "liga", "kern"</code> — enables Geist ligatures. Subtle but noticeable.
+            </p>
+          </div>
+
+          {/* Border radius */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Border Radius System</h2>
+            <p className="text-sm mb-4" style={{ color: '#6b7280' }}>3 tiers only. Consistency is the entire game.</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { r: '6px', use: 'Badges, inputs, inner elements', rule: 'Kill rounded-lg (8px) on inputs' },
+                { r: '10px', use: 'Buttons, small cards, tooltips', rule: '' },
+                { r: '14px', use: 'All cards and panels', rule: 'Kill rounded-xl (12px) and rounded-2xl (16px)' },
+                { r: '9999px', use: 'Pills, avatars, status dots', rule: '' },
+              ].map((r, i) => (
+                <div key={r.r} className="px-5 py-3 flex items-center gap-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="w-8 h-8 shrink-0" style={{ background: 'rgba(99,102,241,0.15)', border: '1px solid rgba(99,102,241,0.3)', borderRadius: r.r === '9999px' ? '9999px' : r.r }} />
+                  <code className="text-sm font-bold w-12 shrink-0" style={{ color: '#a5b4fc' }}>{r.r}</code>
+                  <span className="text-sm flex-1" style={{ color: '#9ca3af' }}>{r.use}</span>
+                  {r.rule && <span className="text-xs shrink-0" style={{ color: '#f87171' }}>⚠ {r.rule}</span>}
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Micro-details */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">12 Micro-Details That Create Polish</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Each under 30 min. Together they account for ~60% of the perceived quality gap between "functional" and "beautiful."</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { n: '1', title: 'Inset top border on cards', body: 'Add box-shadow: inset 0 1px 0 rgba(255,255,255,0.06) to every dark mode card. Raycast and Linear both do this. Makes cards feel 3D without 3D effects. Invisible to most, felt by all.' },
+                { n: '2', title: '150ms transitions everywhere', body: 'Every interactive element: transition: all 150ms ease. Not 300ms (too slow, feels cheap). Not 0 (broken feeling). 150ms is "instant but not jarring."' },
+                { n: '3', title: 'Remove vertical table borders', body: 'Only horizontal row separators. No cell grid lines. Hide action buttons in rightmost column — visible only on row hover. This is the Linear/Vercel table pattern.' },
+                { n: '4', title: 'Active nav item formula', body: 'border-left: 2px solid accent-primary + accent-subtle background + text-heading color + font-weight 500. No bold, no solid background — just subtle tint and colored left bar.' },
+                { n: '5', title: 'Skeleton loaders not spinners', body: 'Animated gray pulse matching the exact shape of loading content. Spinners are 2015. Every major app (Linear, Vercel, Supabase) uses skeletons.' },
+                { n: '6', title: 'Badge formula: muted bg + matching text', body: 'background: var(--success-muted) + color: var(--success) + border-radius: 9999px. Never solid fill badges. Apply universally to all statuses.' },
+                { n: '7', title: 'KPI numbers: tabular-nums + Peso treatment', body: 'font-variant-numeric: tabular-nums on all financial numbers. Peso sign as a separate muted element, the number itself in heading color.' },
+                { n: '8', title: 'Bottom sheets on mobile (not modals)', body: 'All modals → bottom sheets on phones. Full width, slides up, 20px rounded top corners, drag handle. Never a centered floating modal on a 6-inch screen.' },
+                { n: '9', title: '1px card lift on hover', body: 'transform: translateY(-1px) on interactive cards. 1px — not 4px, not 8px. Barely perceptible but always felt. The Stripe/Linear pattern.' },
+                { n: '10', title: 'Override browser focus rings', body: 'outline: none; box-shadow: 0 0 0 3px var(--accent-muted) on all focusable elements. Matches brand color, looks intentional.' },
+                { n: '11', title: 'Warm error messages', body: '"We couldn\'t save that — try again?" not "Error 422: Validation failed." Tone matters especially for non-technical Filipino users.' },
+                { n: '12', title: 'Primary text: #f4f4f6 not #ffffff', body: '2% off-white. Eliminates eye strain, reads as intentional and refined. Every premium dark app (Raycast, Linear, Arc) does this.' },
+              ].map((m, i) => (
+                <div key={m.n} className="px-5 py-4 flex gap-3" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <span className="text-lg font-bold w-6 shrink-0" style={{ color: 'rgba(99,102,241,0.4)' }}>{m.n}</span>
+                  <div>
+                    <p className="text-sm font-semibold text-white mb-1">{m.title}</p>
+                    <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{m.body}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Filipino context */}
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Filipino Design Context</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>From GCash, Maya, Grab PH analysis + Philippine UX research</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { title: 'GCash/Maya dashboard pattern', body: 'Show 3-4 large balance-equivalent metrics at the top: Active Leads, Revenue This Month, Upcoming Events, Outstanding. Large numbers, pride of place. PH users expect this from business apps.' },
+                { title: 'Add amber/gold as secondary accent', body: '#f59e0b (amber-500) — deeply positive cultural associations (prosperity, craftsmanship). Use for pricing, booking confirmed, featured badges. Differentiates from pure tech, feels warm for an event brand.' },
+                { title: 'Warm white in light mode: #fafaf8', body: 'Slightly warm off-white, not cold #ffffff. GCash and Maya both use cream-tinted whites. Filipino UI preferences lean warm.' },
+                { title: 'High contrast for outdoor use', body: 'Event photographers check phones in bright venues. Target 7:1 contrast ratio minimum — not just WCAG AA\'s 4.5:1. Your dark mode already achieves 16:1. Light mode needs verification.' },
+                { title: 'Minimum 12px text, always', body: 'The target user is not a developer on a 4K monitor — they are a 35-year-old photographer glancing at a phone in a bright event hall. Never go below 12px rendered.' },
+                { title: 'Soft red, not pure red for errors', body: 'Use #f87171 (soft coral-red) not #ff0000. Pure red has strong negative cultural connotations in PH. Soft coral reads as "attention needed" not "catastrophe."' },
+              ].map((f, i) => (
+                <div key={f.title} className="px-5 py-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <p className="text-sm font-semibold text-white mb-1">{f.title}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{f.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Decision */}
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
+            <p className="text-sm font-semibold text-white mb-2">The Decision: Full Redesign vs. Polish Pass</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-3">
+              <div className="rounded-xl p-4" style={{ background: 'rgba(239,68,68,0.08)', border: '1px solid rgba(239,68,68,0.2)' }}>
+                <p className="text-sm font-semibold mb-2" style={{ color: '#f87171' }}>Full Redesign (~22 hrs)</p>
+                <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>New surface colors, new spacing, new typography scale. App looks completely different. 1–2 full sessions. Risk: regression bugs during transition.</p>
+              </div>
+              <div className="rounded-xl p-4" style={{ background: 'rgba(16,185,129,0.08)', border: '1px solid rgba(16,185,129,0.2)' }}>
+                <p className="text-sm font-semibold mb-2" style={{ color: '#34d399' }}>Polish Pass (~8 hrs)</p>
+                <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>Fix token inconsistency + add micro-details. Same overall feel, noticeably more polished. 1 session. Recommended starting point — validate before committing to full redesign.</p>
+              </div>
+            </div>
+          </div>
+
         </div>
       )}
     </div>
