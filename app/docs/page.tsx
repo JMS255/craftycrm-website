@@ -170,6 +170,14 @@ const sections = [
         heading: 'SMS follow-up via Semaphore',
         body: 'The daily follow-up cron now sends an SMS to leads that have a phone number but no Messenger. Message is in Taglish: "Hi [Name]! Baka nalimutan lang. Available pa kami para sa iyong event." Costs ₱0.50 per message.',
       },
+      {
+        heading: 'AI next-action badges',
+        body: 'Every lead in list view, mobile cards, and the kanban board now shows a rule-based action badge: "⚡ Event in 3d — confirm!", "🔔 Follow up now" (quoted/negotiating, 7+ days silent), "📞 First contact needed" (new, 3+ days old), "⚠ Event passed — close it". Removes the mental overhead of deciding what to do for each lead.',
+      },
+      {
+        heading: 'Overdue payment alerts',
+        body: 'The Bookings page now shows a red banner listing all bookings where the event date has passed but the balance hasn\'t been collected. Each booking row also shows a payment status badge: Unpaid, Deposit Paid, Fully Paid, or Overdue.',
+      },
     ],
   },
   {
@@ -179,19 +187,15 @@ const sections = [
     content: [
       {
         heading: 'Custom package builder',
-        body: 'Pick your base package with a click — Photobooth Only, Photography Only, Bundle, or Premium. Add optional add-ons (extra hour, magnet prints). The total auto-calculates and flows directly into the booking and invoice. No typing, no math, no wrong prices.',
+        body: 'Click to build a quote: pick your base package (Photobooth, Photography, Bundle, Premium), toggle add-ons (extra hour ₱800, magnet prints ₱1,500), and the total auto-calculates. Flows directly into the booking record and invoice. Crafty can also use your defined packages by name when creating bookings via chat.',
       },
       {
-        heading: 'AI next-action badges',
-        body: 'A rule-based label on each lead card showing exactly what to do: "Event in 2 weeks, unbooked — follow up now", "Quoted 7 days ago — check in", "Event passed — mark won or lost". Removes the mental overhead of remembering every lead.',
-      },
-      {
-        heading: 'Open beta',
-        body: 'Removing the invite code so any Filipino service business can sign up and use Crafty CRM for free. Coming after the core features are stable.',
+        heading: 'Crafty AI training',
+        body: 'Configure Crafty\'s packages, pricing, personality, and business details from inside the app — no code changes required. Coming when open beta launches.',
       },
       {
         heading: 'GCash / PayMongo payment links',
-        body: 'Auto-generate a real payment link per booking. When the client pays, a webhook automatically marks the deposit as paid — no more manually checking GCash.',
+        body: 'Auto-generate a real payment link per booking. When the client pays, a webhook automatically marks the deposit as paid in the CRM.',
       },
     ],
   },
