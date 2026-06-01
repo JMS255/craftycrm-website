@@ -133,6 +133,41 @@ const sections = [
       },
     ],
   },
+  {
+    id: 'coming-soon',
+    title: 'Coming Soon',
+    icon: '⚡',
+    content: [
+      {
+        heading: 'Paste DM → Crafty creates the lead',
+        body: 'Copy-paste a raw Messenger or Instagram inquiry into Crafty. It extracts the client\'s name, event type, date, guest count, and package interest — then creates the lead instantly. No form, no manual typing.',
+      },
+      {
+        heading: 'Cold Lead Alerts',
+        body: 'A widget on the leads page that flags leads in Contacted, Quoted, or Negotiating status that haven\'t had any activity in 5+ days. Color-coded: warm (3 days), cold (7 days), very cold (14 days). You see exactly what needs attention the moment you open the CRM.',
+      },
+      {
+        heading: 'One-message booking conversion',
+        body: 'Tell Crafty "Convert Maria Santos to a booking" — it pulls the event details from the lead, calculates the deposit, creates the booking, and updates the lead status to Booked. The whole thing in one chat message.',
+      },
+      {
+        heading: 'Revenue dashboard card',
+        body: 'A permanent card on the main dashboard showing: confirmed revenue this month, weighted pipeline forecast (Quoted × 40%, Negotiating × 70%, Booked × 95%), and collected vs. outstanding. No need to ask Crafty — the number is always there.',
+      },
+      {
+        heading: 'Booking confirmation smart link',
+        body: 'When a client confirms, generate one shareable link. They open it, see the event summary and package, agree to your terms, and get your GCash details. When they confirm, the booking is auto-created in the CRM — no manual steps on your end.',
+      },
+      {
+        heading: 'SMS follow-up via Semaphore',
+        body: 'Automated SMS reminders sent to quiet leads via the Semaphore Philippine SMS gateway. Filipino clients respond far better to SMS than email. Costs ₱0.50 per message — a 50-message month costs ₱25 total.',
+      },
+      {
+        heading: 'GCash / PayMongo payment links',
+        body: 'Generate a real GCash payment link per booking via PayMongo. When the client pays, a webhook automatically marks the deposit as paid in the CRM — no more manually checking your GCash and updating the record.',
+      },
+    ],
+  },
 ]
 
 export default function DocsPage() {
