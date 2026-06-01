@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-type Tab = 'features' | 'ux' | 'ui'
+type Tab = 'features' | 'ux' | 'ui' | 'market'
 
 const featureSections = [
   {
@@ -379,9 +379,20 @@ export default function ResearchPage() {
           style={{
             background: tab === 'ui' ? 'rgba(99,102,241,0.15)' : 'transparent',
             color: tab === 'ui' ? '#a5b4fc' : '#6b7280',
+            borderRight: '1px solid #1e1e2e',
           }}
         >
           UI Design
+        </button>
+        <button
+          onClick={() => setTab('market')}
+          className="flex-1 py-2.5 text-sm font-medium transition-colors"
+          style={{
+            background: tab === 'market' ? 'rgba(99,102,241,0.15)' : 'transparent',
+            color: tab === 'market' ? '#a5b4fc' : '#6b7280',
+          }}
+        >
+          Market Research
         </button>
       </div>
 
@@ -735,6 +746,100 @@ export default function ResearchPage() {
             </div>
           </div>
 
+        </div>
+      )}
+
+      {/* Market Research */}
+      {tab === 'market' && (
+        <div className="space-y-10">
+          <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+            <p className="text-sm font-semibold text-white mb-2">Executive Summary</p>
+            <p className="text-sm leading-relaxed mb-3" style={{ color: '#9ca3af' }}>
+              The Philippine CRM market is projected to reach <strong className="text-white">USD 134.7 million by 2025</strong>, growing at <strong className="text-white">13.19% CAGR</strong> through 2029. Almost none of that growth targets small Filipino service businesses at the ₱800–₱1,200/month price point. <strong className="text-white">Craftifyle is the only Filipino-built CRM purpose-built for the local service business niche.</strong> The window is real and currently uncontested. The main risk is not competition from above — it is the inertia of Messenger + Google Sheets from below.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              {[{ val: '$134.7M', label: 'PH CRM market size' }, { val: '13.19%', label: 'Annual growth rate' }, { val: '47–70%', label: 'CRM deployments that FAIL in PH' }, { val: '0', label: 'Direct competitors in this niche' }].map(s => (
+                <div key={s.val} className="rounded-xl p-3 text-center" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
+                  <p className="text-xl font-bold" style={{ color: '#818cf8' }}>{s.val}</p>
+                  <p className="text-xs mt-1" style={{ color: '#6b7280' }}>{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Direct Competitors</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Tools that overlap with Craftifyle's core use case — none are serious threats</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { name: 'Studio Ninja', price: '₱900–₱2,240/mo', presence: 'Some PH photographers', threat: 'Low', body: 'USD only, no SMS, support degraded post-acquisition. Photography-only — no photobooth, florist, caterer support.' },
+                { name: 'Dubsado', price: '₱1,120–₱2,240/mo', presence: 'Small VA/freelancer community', threat: 'Low', body: 'Notoriously complex to set up. USD only, no GCash, built for US freelancers not PH event suppliers.' },
+                { name: 'HoneyBook', price: '₱1,624–₱6,104/mo', presence: 'NOT AVAILABLE IN PH', threat: 'None', body: 'Officially US/Canada only. Cannot legally be used by Philippine businesses for client billing.' },
+                { name: 'Check Cherry', price: '₱2,184+/mo', presence: 'Zero PH presence', threat: 'Low', body: '3× Craftifyle price, no AI, no SMS, no local payment integration. Photobooth-specific but USD.' },
+                { name: 'Eventchy', price: 'Marketplace fee', presence: 'Metro Manila only', threat: 'None', body: 'A marketplace (lead gen), NOT a CRM. Leads still go to Messenger after. Complementary to Craftifyle — not competing. Potential partnership.' },
+                { name: 'Zoho / HubSpot / Salesforce', price: '₱784–₱2,240+/user', presence: 'Enterprise/agencies only', threat: 'None', body: 'Generic B2B tools for teams. Will never build photobooth-specific features, peso invoicing, or GCash context. 47–70% of PH deployments fail due to poor fit.' },
+              ].map((c, i) => (
+                <div key={c.name} className="px-5 py-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="flex items-start justify-between gap-3 mb-1.5 flex-wrap">
+                    <div>
+                      <p className="text-sm font-semibold text-white">{c.name}</p>
+                      <p className="text-xs" style={{ color: '#a5b4fc' }}>{c.price} · {c.presence}</p>
+                    </div>
+                    <span className="text-xs px-2 py-0.5 rounded-full shrink-0" style={{ background: c.threat === 'None' ? 'rgba(16,185,129,0.1)' : 'rgba(245,158,11,0.1)', color: c.threat === 'None' ? '#34d399' : '#fbbf24' }}>Threat: {c.threat}</span>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{c.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">The Real Competition — Indirect</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>This is the actual fight. Not Zoho. This.</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { name: 'Facebook Messenger + manual replies', threat: '🔴 Critical', body: 'Most Filipino event suppliers run their entire business from a chat window. Research confirmed: the #1 cause of lost leads in PH is response latency — inquiry arrives, nobody replies fast enough, lead moves to competitor. Crafty AI + SMS follow-up directly solves this.' },
+                { name: 'Google Sheets / Excel', threat: '🟠 High', body: 'Free, familiar, good enough for 2–5 bookings/month. Breaks down at 10+ active leads. That transition moment is Craftifyle\'s primary acquisition opportunity.' },
+                { name: 'Meta Business Suite', threat: '🟡 Medium', body: 'Some operators use it for auto-replies. Zero pipeline, zero invoicing, zero contracts. Users still fall back to Messenger for actual conversations.' },
+              ].map((c, i) => (
+                <div key={c.name} className="px-5 py-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="flex items-center gap-2 mb-1">
+                    <p className="text-sm font-semibold text-white">{c.name}</p>
+                    <span className="text-xs" style={{ color: '#9ca3af' }}>{c.threat}</span>
+                  </div>
+                  <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{c.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Positioning Playbook</h2>
+            <div className="space-y-3">
+              {[
+                { vs: 'vs. Messenger + Sheets', line: '"Your Messenger is full of leads you forgot to follow up on. Craftifyle remembers so you don\'t have to."', color: '#ef4444' },
+                { vs: 'vs. Studio Ninja / Dubsado', line: '"Studio Ninja is $27/month in dollars. Craftifyle is ₱800 in pesos. And it actually sends SMS."', color: '#f97316' },
+                { vs: 'vs. Zoho / HubSpot', line: '"Zoho gives you 50 blank fields and wishes you good luck. Craftifyle comes pre-built for photobooth businesses."', color: '#fbbf24' },
+                { vs: 'vs. Eventchy', line: 'Don\'t compete — partner. "Eventchy gets you found. Craftifyle gets you booked and paid."', color: '#10b981' },
+                { vs: 'vs. Salesforce', line: '"Salesforce just opened in Manila. We\'ve been in Zamboanga since day one, building for the businesses Salesforce will never notice."', color: '#6366f1' },
+              ].map(p => (
+                <div key={p.vs} className="rounded-xl p-4" style={{ background: '#111118', border: `1px solid ${p.color}30` }}>
+                  <p className="text-xs font-semibold uppercase tracking-widest mb-2" style={{ color: p.color }}>{p.vs}</p>
+                  <p className="text-sm italic leading-relaxed" style={{ color: '#e2e2f0' }}>{p.line}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl p-6" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
+            <p className="text-sm font-semibold text-white mb-3">The Unique Position No Competitor Has</p>
+            {['Filipino-built, peso-priced, peso-billed — no international competitor does this', 'Purpose-built for photobooth/photographer/event supplier workflow — not a generic sales pipeline', 'AI-powered (Crafty AI) — no competitor offers AI at this price point in PH', 'SMS follow-up through PH telcos — directly addresses the #1 lead-loss cause in the Philippines', 'Built from Zamboanga — serving the rest of PH that Metro Manila ignores', 'Eventchy partnership opportunity — marketplace sends leads, Craftifyle manages them'].map((p, i) => (
+              <div key={i} className="flex items-start gap-2 mb-2">
+                <span className="text-sm shrink-0 mt-0.5" style={{ color: '#6366f1' }}>✓</span>
+                <p className="text-sm" style={{ color: '#9ca3af' }}>{p}</p>
+              </div>
+            ))}
+          </div>
         </div>
       )}
     </div>
