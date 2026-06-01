@@ -154,6 +154,22 @@ const sections = [
         heading: 'Revenue dashboard card',
         body: 'The main dashboard now shows a 3-column card for the current month: Confirmed (total of all bookings), Collected (deposit + balance payments received), and Outstanding (what\'s still owed). Updates automatically as payments are logged.',
       },
+      {
+        heading: 'Kanban board view',
+        body: 'The Leads page now has a Board/List toggle at the top right. Board mode shows 6 columns (New → Contacted → Quoted → Negotiating → Booked → Lost). Drag any lead card to a new column to move it through the pipeline — updates instantly in the database.',
+      },
+      {
+        heading: 'Dashboard charts',
+        body: 'A Trends section on the dashboard shows two charts: a bar chart of bookings per month for the current year, and a source donut showing which channels (Facebook, Instagram, referral, etc.) your leads are coming from.',
+      },
+      {
+        heading: 'Booking confirmation smart link',
+        body: 'On any booking detail page, click the 🔗 Share Link button. It copies a public URL you can send to your client. They open it and see the event name, date, venue, package price, payment status, your GCash number (0993-632-4512), and your cancellation terms. No login required.',
+      },
+      {
+        heading: 'SMS follow-up via Semaphore',
+        body: 'The daily follow-up cron now sends an SMS to leads that have a phone number but no Messenger. Message is in Taglish: "Hi [Name]! Baka nalimutan lang. Available pa kami para sa iyong event." Costs ₱0.50 per message.',
+      },
     ],
   },
   {
@@ -162,24 +178,20 @@ const sections = [
     icon: '⚡',
     content: [
       {
-        heading: 'Kanban board view for leads',
-        body: 'A drag-and-drop pipeline board — columns for each stage (New, Contacted, Quoted, Negotiating, Booked). Drag a card to move the lead. See your whole pipeline spatially at a glance instead of a list.',
+        heading: 'Custom package builder',
+        body: 'Pick your base package with a click — Photobooth Only, Photography Only, Bundle, or Premium. Add optional add-ons (extra hour, magnet prints). The total auto-calculates and flows directly into the booking and invoice. No typing, no math, no wrong prices.',
       },
       {
-        heading: 'Booking confirmation smart link',
-        body: 'When a client confirms, generate one shareable link. They open it, see the event summary and package, agree to your terms, and get your GCash details. When they confirm, the booking is auto-created — no manual steps on your end.',
+        heading: 'AI next-action badges',
+        body: 'A rule-based label on each lead card showing exactly what to do: "Event in 2 weeks, unbooked — follow up now", "Quoted 7 days ago — check in", "Event passed — mark won or lost". Removes the mental overhead of remembering every lead.',
       },
       {
-        heading: 'SMS follow-up via Semaphore',
-        body: 'Automated SMS reminders to quiet leads via the Semaphore PH SMS gateway. Filipino clients respond far better to SMS than email. Costs ₱0.50 per SMS — 50 messages a month costs ₱25 total.',
+        heading: 'Open beta',
+        body: 'Removing the invite code so any Filipino service business can sign up and use Crafty CRM for free. Coming after the core features are stable.',
       },
       {
         heading: 'GCash / PayMongo payment links',
-        body: 'Auto-generate a GCash payment link per booking. When the client pays, a webhook automatically marks the deposit as paid in the CRM — no more manually checking your GCash and updating the record.',
-      },
-      {
-        heading: 'Dashboard charts',
-        body: 'Bar chart of bookings per month (see your peak seasons), conversion funnel by pipeline stage, and lead source breakdown — which channel (Facebook, Instagram, referral) actually converts to bookings.',
+        body: 'Auto-generate a real payment link per booking. When the client pays, a webhook automatically marks the deposit as paid — no more manually checking GCash.',
       },
     ],
   },
