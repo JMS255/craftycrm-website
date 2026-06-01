@@ -1,7 +1,7 @@
 const quarters = [
   {
     label: 'Now — Beta',
-    status: 'current',
+    status: 'done',
     color: '#10b981',
     items: [
       { status: 'done', text: 'Multi-user accounts with data isolation' },
@@ -18,8 +18,8 @@ const quarters = [
     ],
   },
   {
-    label: 'Sprint 2 — July 2026',
-    status: 'next',
+    label: 'Sprint 2 — June 2026',
+    status: 'done',
     color: '#6366f1',
     items: [
       { status: 'done', text: 'Crafty Assistant — CRM Actions mode: tell Crafty to add leads, update bookings, log payments, and query revenue in plain English' },
@@ -35,13 +35,13 @@ const quarters = [
       { status: 'done', text: 'Open beta ready — delete INVITE_CODE env var in Vercel to open signups publicly' },
       { status: 'done', text: 'AI next-action badges — rule-based label on each lead in list, mobile, and kanban: "Event in Xd", "Follow up now", "First contact needed", "Event passed"' },
       { status: 'done', text: 'Payments redesign — Overdue alert banner on bookings page + payment status badge per booking (Unpaid / Deposit Paid / Fully Paid / Overdue)' },
-      { status: 'planned', text: 'Custom package builder — click to select base package + add-ons, total auto-calculates, flows into invoice and Crafty' },
-      { status: 'planned', text: 'Crafty AI training — configure personality, packages, and pricing from the app (no code required)' },
+      { status: 'done', text: 'Custom package builder — click to select base package + add-ons, total auto-calculates, flows into invoice and Crafty' },
+      { status: 'done', text: 'Crafty AI training — configure packages and pricing from the app via /settings; Crafty reads from DB on every request, no code change needed' },
     ],
   },
   {
     label: 'Sprint 3 — August 2026',
-    status: 'future',
+    status: 'current',
     color: '#a78bfa',
     items: [
       { status: 'planned', text: 'GCash / PayMongo payment links — auto-generate a payment link per booking; webhook auto-marks deposit paid when client pays' },
@@ -95,15 +95,21 @@ export default function RoadmapPage() {
           <div key={q.label} className="relative pl-6 border-l" style={{ borderColor: '#1e1e2e' }}>
             {/* Dot */}
             <div className="absolute -left-1.5 top-1.5 w-3 h-3 rounded-full"
-              style={{ background: q.status === 'current' ? q.color : '#1e1e2e', border: `2px solid ${q.color}` }} />
+              style={{ background: (q.status === 'current' || q.status === 'done') ? q.color : '#1e1e2e', border: `2px solid ${q.color}` }} />
 
             <div className="mb-4">
               <div className="flex items-center gap-3 flex-wrap">
                 <span className="text-lg font-bold text-white">{q.label}</span>
                 {q.status === 'current' && (
                   <span className="text-xs px-2 py-0.5 rounded-full font-medium"
-                    style={{ background: 'rgba(16,185,129,0.15)', color: '#10b981' }}>
+                    style={{ background: 'rgba(99,102,241,0.15)', color: '#a5b4fc' }}>
                     In progress
+                  </span>
+                )}
+                {q.status === 'done' && (
+                  <span className="text-xs px-2 py-0.5 rounded-full font-medium"
+                    style={{ background: 'rgba(16,185,129,0.15)', color: '#10b981' }}>
+                    Shipped ✓
                   </span>
                 )}
               </div>
