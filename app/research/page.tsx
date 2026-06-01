@@ -221,6 +221,55 @@ const uxSections = [
     ],
   },
   {
+    label: '📋 Next Session',
+    color: '#06b6d4',
+    bg: 'rgba(6,182,212,0.08)',
+    border: 'rgba(6,182,212,0.2)',
+    desc: 'Deliberately skipped — requires external setup or more planning',
+    items: [
+      {
+        title: 'C4 — Swipe-to-action on lead cards',
+        impact: 'High', difficulty: 'Medium',
+        body: 'Swipe right = "Mark followed up." Swipe left = "Archive." Undo snackbar for 4 seconds. Skipped this session — needs custom swipe gesture handling (~60 min).',
+      },
+      {
+        title: 'C6 — Facebook Login as primary sign-in',
+        impact: 'High', difficulty: 'Medium',
+        body: 'Make "Continue with Facebook" the primary button above the email form. Requires Supabase OAuth config + Facebook app setup. Cannot be done without external app credentials.',
+      },
+      {
+        title: 'H7 — Optimistic UI / offline resilience',
+        impact: 'High', difficulty: 'Hard',
+        body: 'Update UI immediately on action, sync in background. Show "Syncing..." for offline edits. Full refactor of data layer — 3+ hours minimum.',
+      },
+      {
+        title: 'N1 — Daily streak / habit gamification',
+        impact: 'Medium', difficulty: 'Easy',
+        body: '"7-day streak 🔥" counter. Monthly summary card. Proven retention mechanic.',
+      },
+      {
+        title: 'N3 — Revenue at risk card',
+        impact: 'Medium', difficulty: 'Easy',
+        body: 'Dashboard card: "At Risk: ₱X" — total value of cold leads. Reframe cold leads as money about to walk out the door.',
+      },
+      {
+        title: 'N4 — Booking image export',
+        impact: 'Medium', difficulty: 'Medium',
+        body: '1080×1080 branded booking summary card to share on Facebook or send to clients via Messenger.',
+      },
+      {
+        title: 'N5 — Taglish UI copy option',
+        impact: 'Medium', difficulty: 'Medium',
+        body: 'Settings toggle: English / Filipino. Replace 20–30 key labels with natural Taglish.',
+      },
+      {
+        title: 'N6 — Viber + WhatsApp deep links',
+        impact: 'Medium', difficulty: 'Easy',
+        body: 'One-tap "open in Viber/WhatsApp with client number pre-filled" on follow-up templates.',
+      },
+    ],
+  },
+  {
     label: '💡 Nice to Have',
     color: '#6b7280',
     bg: 'rgba(107,114,128,0.06)',
