@@ -6,8 +6,9 @@ import { useState } from 'react'
 const links = [
   { href: '/#features', label: 'Features' },
   { href: '/docs', label: 'Docs' },
-  { href: '/changelog', label: 'Changelog' },
   { href: '/roadmap', label: 'Roadmap' },
+  { href: '/research', label: 'Research' },
+  { href: '/changelog', label: 'Changelog' },
 ]
 
 export default function Navbar() {
