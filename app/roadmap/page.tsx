@@ -14,6 +14,7 @@ const quarters = [
       { status: 'done', text: 'Ad performance dashboard (Facebook Traffic ads)' },
       { status: 'done', text: 'Google Calendar sync' },
       { status: 'done', text: 'Dark / Light mode' },
+      { status: 'done', text: 'Crafty AI always date-aware — both AI modes know today\'s date on every request' },
     ],
   },
   {
@@ -22,10 +23,10 @@ const quarters = [
     color: '#6366f1',
     items: [
       { status: 'done', text: 'Crafty Assistant — CRM Actions mode: tell Crafty to add leads, update bookings, log payments, and query revenue in plain English' },
-      { status: 'planned', text: 'Paste DM → Crafty parses it — copy-paste a raw Messenger inquiry, Crafty extracts the details and creates the lead instantly, no form needed' },
-      { status: 'planned', text: 'Cold Lead Alert widget — see at a glance which leads have gone quiet, color-coded by days since last activity' },
-      { status: 'planned', text: 'Convert lead to booking via Crafty — one chat message closes the deal: Crafty auto-fills event details from the lead and creates the booking' },
-      { status: 'planned', text: 'Revenue dashboard card — confirmed revenue, weighted pipeline forecast, and collected vs. outstanding shown on the main dashboard' },
+      { status: 'done', text: 'Paste DM → Crafty parses it — copy-paste a raw Messenger inquiry, Crafty extracts the details and creates the lead instantly, no form needed' },
+      { status: 'done', text: 'Cold Lead Alert widget — see at a glance which leads have gone quiet, color-coded by days since last activity' },
+      { status: 'done', text: 'Convert lead to booking via Crafty — one chat message closes the deal: Crafty auto-fills event details from the lead and creates the booking' },
+      { status: 'done', text: 'Revenue dashboard card — confirmed revenue, collected, and outstanding balance shown on the main dashboard every month' },
       { status: 'planned', text: 'Activity timeline UI — log calls, notes, and follow-ups directly on the lead detail page, with full interaction history' },
       { status: 'planned', text: 'Kanban board view — drag-and-drop lead cards across pipeline stages' },
       { status: 'planned', text: 'Dashboard charts — conversion rate, monthly booking trends, lead source breakdown' },

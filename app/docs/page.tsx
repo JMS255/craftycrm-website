@@ -134,37 +134,52 @@ const sections = [
     ],
   },
   {
+    id: 'whats-new',
+    title: 'What\'s New',
+    icon: '✅',
+    content: [
+      {
+        heading: 'Paste DM → Crafty creates the lead',
+        body: 'Open the chat widget → ⚡ CRM Actions tab → click the 📋 button. Paste the raw client DM ("Hi! Available ba kayo July 20? Birthday ng anak ko, 80 guests"). Crafty extracts the details and creates the lead. No form, no manual typing.',
+      },
+      {
+        heading: 'Cold Lead Alerts',
+        body: 'The Leads page now shows a 🔥 banner at the top listing every lead in Contacted, Quoted, or Negotiating status that has been silent for 5+ days. Color-coded: Warm (5–6 days), Cold (7–13 days), Very Cold (14+ days). Each row shows the exact days of silence.',
+      },
+      {
+        heading: 'Convert lead to booking via Crafty',
+        body: 'Tell Crafty in CRM Actions mode: "Convert Maria Santos to a booking, she paid her deposit." Crafty finds the lead, pulls the event date, venue, and package, creates the booking, marks the deposit paid, and updates the lead status to Booked — all in one message.',
+      },
+      {
+        heading: 'Revenue dashboard card',
+        body: 'The main dashboard now shows a 3-column card for the current month: Confirmed (total of all bookings), Collected (deposit + balance payments received), and Outstanding (what\'s still owed). Updates automatically as payments are logged.',
+      },
+    ],
+  },
+  {
     id: 'coming-soon',
     title: 'Coming Soon',
     icon: '⚡',
     content: [
       {
-        heading: 'Paste DM → Crafty creates the lead',
-        body: 'Copy-paste a raw Messenger or Instagram inquiry into Crafty. It extracts the client\'s name, event type, date, guest count, and package interest — then creates the lead instantly. No form, no manual typing.',
-      },
-      {
-        heading: 'Cold Lead Alerts',
-        body: 'A widget on the leads page that flags leads in Contacted, Quoted, or Negotiating status that haven\'t had any activity in 5+ days. Color-coded: warm (3 days), cold (7 days), very cold (14 days). You see exactly what needs attention the moment you open the CRM.',
-      },
-      {
-        heading: 'One-message booking conversion',
-        body: 'Tell Crafty "Convert Maria Santos to a booking" — it pulls the event details from the lead, calculates the deposit, creates the booking, and updates the lead status to Booked. The whole thing in one chat message.',
-      },
-      {
-        heading: 'Revenue dashboard card',
-        body: 'A permanent card on the main dashboard showing: confirmed revenue this month, weighted pipeline forecast (Quoted × 40%, Negotiating × 70%, Booked × 95%), and collected vs. outstanding. No need to ask Crafty — the number is always there.',
+        heading: 'Kanban board view for leads',
+        body: 'A drag-and-drop pipeline board — columns for each stage (New, Contacted, Quoted, Negotiating, Booked). Drag a card to move the lead. See your whole pipeline spatially at a glance instead of a list.',
       },
       {
         heading: 'Booking confirmation smart link',
-        body: 'When a client confirms, generate one shareable link. They open it, see the event summary and package, agree to your terms, and get your GCash details. When they confirm, the booking is auto-created in the CRM — no manual steps on your end.',
+        body: 'When a client confirms, generate one shareable link. They open it, see the event summary and package, agree to your terms, and get your GCash details. When they confirm, the booking is auto-created — no manual steps on your end.',
       },
       {
         heading: 'SMS follow-up via Semaphore',
-        body: 'Automated SMS reminders sent to quiet leads via the Semaphore Philippine SMS gateway. Filipino clients respond far better to SMS than email. Costs ₱0.50 per message — a 50-message month costs ₱25 total.',
+        body: 'Automated SMS reminders to quiet leads via the Semaphore PH SMS gateway. Filipino clients respond far better to SMS than email. Costs ₱0.50 per SMS — 50 messages a month costs ₱25 total.',
       },
       {
         heading: 'GCash / PayMongo payment links',
-        body: 'Generate a real GCash payment link per booking via PayMongo. When the client pays, a webhook automatically marks the deposit as paid in the CRM — no more manually checking your GCash and updating the record.',
+        body: 'Auto-generate a GCash payment link per booking. When the client pays, a webhook automatically marks the deposit as paid in the CRM — no more manually checking your GCash and updating the record.',
+      },
+      {
+        heading: 'Dashboard charts',
+        body: 'Bar chart of bookings per month (see your peak seasons), conversion funnel by pipeline stage, and lead source breakdown — which channel (Facebook, Instagram, referral) actually converts to bookings.',
       },
     ],
   },
