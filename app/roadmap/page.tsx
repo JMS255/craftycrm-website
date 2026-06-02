@@ -87,6 +87,40 @@ export default function RoadmapPage() {
         <p style={{ color: '#6b7280' }}>What we've built and where we're going. Updated as we ship.</p>
       </div>
 
+      {/* Beta Readiness Card */}
+      <div className="rounded-2xl p-6 mb-12" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+        <div className="flex items-center justify-between mb-3 flex-wrap gap-3">
+          <p className="text-sm font-semibold text-white">Open Beta Readiness</p>
+          <span className="text-2xl font-bold" style={{ color: '#a78bfa' }}>68%</span>
+        </div>
+        <div className="h-2 rounded-full overflow-hidden mb-5" style={{ background: '#1e1e2e' }}>
+          <div className="h-full rounded-full" style={{ width: '68%', background: 'linear-gradient(90deg, #6366f1, #a78bfa)' }} />
+        </div>
+        <div className="space-y-2 mb-5">
+          {[
+            { label: 'Core CRM — leads, bookings, invoices, payments', done: true },
+            { label: 'Crafty AI assistant (paste DM, CRM actions, revenue queries)', done: true },
+            { label: 'Mobile-first layout — bottom nav, swipe, kanban, onboarding', done: true },
+            { label: 'Dashboard alerts — balance due, cold leads, today\'s actions', done: true },
+            { label: 'Optimistic UI — actions feel instant on slow PH networks', done: false },
+            { label: 'Facebook Login — blocked until OAuth app credentials are set up', done: false },
+            { label: 'Crafty Messenger bot — blocked until Meta BIR approval', done: false },
+          ].map((item, i) => (
+            <div key={i} className="flex items-start gap-2.5">
+              <span className="shrink-0 mt-0.5 text-xs font-bold" style={{ color: item.done ? '#34d399' : '#4a4a6a' }}>
+                {item.done ? '✓' : '○'}
+              </span>
+              <p className="text-sm" style={{ color: item.done ? '#6b7280' : '#9ca3af', textDecoration: item.done ? 'line-through' : 'none', opacity: item.done ? 0.7 : 1 }}>
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+        <p className="text-xs leading-relaxed" style={{ color: '#4a4a6a' }}>
+          Core CRM is production-ready. The Messenger bot is blocked by a Meta BIR requirement (external). Open beta without the bot is 2–3 sessions away — Optimistic UI first, then remove the invite code.
+        </p>
+      </div>
+
       {/* Legend */}
       <div className="flex flex-wrap gap-3 mb-12">
         {Object.entries(statusStyles).map(([key, s]) => (
