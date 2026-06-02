@@ -59,6 +59,16 @@ const quarters = [
     ],
   },
   {
+    label: 'Sprint 4 — In Progress',
+    status: 'current',
+    color: '#06b6d4',
+    items: [
+      { status: 'planned', text: 'Personalized onboarding — AHA moment first: new users paste a real client DM and watch Crafty extract the details line-by-line before any questions are asked. Then 3 quick questions (name, business name, business type) to tailor the app.' },
+      { status: 'planned', text: 'Multi-industry support — Crafty CRM now fits any Filipino service business, not just photobooth. 7 business types (photobooth, printing, travel & tours, graphic design, catering, beauty & wellness, other) each pre-load industry-standard package templates with real PH pricing.' },
+      { status: 'planned', text: 'First-session companion — for the first 30 minutes, Crafty cheers you on like a friend (in Taglish) as you add your first leads, change stages, and make your first booking. Goes quiet after. Not a game — just encouragement while you learn.' },
+    ],
+  },
+  {
     label: 'Future',
     status: 'future',
     color: '#4a4a6a',
