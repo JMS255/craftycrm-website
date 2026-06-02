@@ -4,12 +4,12 @@ import ScreenshotGallery from './components/ScreenshotGallery'
 const featureSections = [
   {
     badge: 'Lead Pipeline',
-    title: 'Never lose a lead again',
-    desc: 'Every inquiry tracked from first message to booked event. See every lead\'s stage, event date, budget, and source at a glance.',
+    title: 'Never let a client fall through the cracks',
+    desc: 'Every DM that comes in — tracked. Never again will you lose a booking because a message got buried under 200 other chats.',
     bullets: [
-      'New → Contacted → Quoted → Negotiating → Booked',
-      'Log calls, notes, and follow-up reminders per lead',
-      'Search and filter across all your inquiries instantly',
+      'Paste a Messenger DM — Crafty creates the lead in seconds',
+      'See every lead\'s status, event date, and what to do next',
+      'Get alerted when a client goes quiet for 5+ days',
     ],
     screenshot: '/screenshots/leads.png',
     imageRight: true,
@@ -17,43 +17,43 @@ const featureSections = [
   },
   {
     badge: 'Crafty AI',
-    title: 'AI that works while you sleep',
-    desc: 'Connect your Facebook page once. Crafty AI replies to every inquiry in Taglish, asks discovery questions, recommends packages, and creates leads automatically.',
+    title: 'Your business runs while you\'re at an event',
+    desc: 'While you\'re setting up at a debut, Crafty is replying to new inquiries in Taglish — asking the right questions and keeping clients warm until you\'re free.',
     bullets: [
-      '24/7 automatic replies in Taglish — no typing needed',
-      'Auto-creates and updates leads from every conversation',
-      'Client says "PAID" → booking created instantly',
+      '24/7 replies in Taglish — sounds like you, not a robot',
+      'Paste any DM and Crafty organizes it instantly — no form',
+      '"Paid na" → booking created and calendar synced automatically',
     ],
     screenshot: '/screenshots/lead-detail.png',
     imageRight: false,
     color: '#8b5cf6',
   },
   {
-    badge: 'Bookings & Invoices',
-    title: 'From confirmed to paid — in one place',
-    desc: 'Track deposits, balances, and upcoming events. Generate a professional invoice with one click. Never chase a payment without knowing who owes what.',
+    badge: 'Bookings & Payments',
+    title: 'Know exactly who owes you money',
+    desc: 'See every unpaid balance at a glance. No more "uy, nakalimutan ko mag-follow up." Send a professional invoice with one tap.',
     bullets: [
-      'Track deposit and balance per booking',
-      'One-click printable PDF invoice with your business info',
-      'Google Calendar sync on every confirmed booking',
+      'Dashboard shows confirmed revenue, collected, and outstanding',
+      'One-click invoice — looks professional, no design needed',
+      'Share a booking confirmation link — client sees all the details',
     ],
     screenshot: '/screenshots/bookings.png',
     imageRight: true,
-    color: '#10b981',
+    color: '#f59e0b',
   },
 ]
 
 const steps = [
-  { step: '01', title: 'Connect your Messenger', desc: 'Link your Facebook page once. Crafty AI starts handling inquiries immediately.' },
-  { step: '02', title: 'Watch leads come in', desc: 'Every new inquiry is captured, qualified, and tracked automatically in your pipeline.' },
-  { step: '03', title: 'Convert and get paid', desc: 'One click to convert a lead to a booking, generate an invoice, and sync to your calendar.' },
+  { step: '01', title: 'Paste a DM — lead created in 10 seconds', desc: 'Copy any client inquiry from Messenger. Crafty extracts the name, event date, guest count, and contact number — and creates the lead. No form. No typing.' },
+  { step: '02', title: 'Crafty replies while you\'re at an event', desc: 'While you\'re setting up the photobooth, Crafty is replying to new inquiries in Taglish. Asking the right questions. Keeping clients warm until you\'re free.' },
+  { step: '03', title: 'Collect your money — stop chasing', desc: 'See exactly who owes you and how much. Dashboard alerts you when balance is due before the event. No more "nakalimutan ko pala".' },
 ]
 
 const stats = [
-  { value: '6', label: 'Core features' },
-  { value: '3', label: 'Days to build v1' },
-  { value: '24/7', label: 'AI always on' },
-  { value: '₱0', label: 'During beta' },
+  { value: '2 min', label: 'To your first organized lead' },
+  { value: '24/7', label: 'Crafty AI replies for you' },
+  { value: '₱0', label: 'During beta — libre talaga' },
+  { value: '0', label: 'Other CRMs built for PH operators' },
 ]
 
 export default function HomePage() {
@@ -77,16 +77,16 @@ export default function HomePage() {
             <div>
               <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full text-xs font-medium mb-6"
                 style={{ background: 'rgba(99,102,241,0.15)', color: '#a5b4fc', border: '1px solid rgba(99,102,241,0.3)' }}>
-                🎉 Now in Beta · Free for early users
+                🇵🇭 Built in Zamboanga City · Free during beta
               </div>
               <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-5 text-white">
-                The CRM built for<br />
-                <span style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                  Filipino service businesses
+                Stop losing bookings<br />
+                <span style={{ background: 'linear-gradient(135deg, #f59e0b, #7c6ff7, #ec4899)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
+                  to Messenger chaos
                 </span>
               </h1>
               <p className="text-base md:text-lg leading-relaxed mb-8" style={{ color: '#6b7280' }}>
-                Manage leads, bookings, and finances in one place — with Crafty AI that replies to clients in Taglish on Messenger, 24/7.
+                That inquiry buried under 200 DMs — that was a booking you lost. That client who attended without paying balance — that&apos;s ₱3,000 gone. Craftifyle stops both from happening again. Libre habang beta.
               </p>
               <div className="flex flex-col sm:flex-row gap-3 mb-6">
                 <Link href="https://craftifyle-crm-system.vercel.app/signup"
@@ -100,7 +100,7 @@ export default function HomePage() {
                   Try demo account
                 </Link>
               </div>
-              <p className="text-xs" style={{ color: '#4a4a6a' }}>No credit card. No setup fee. Built in Zamboanga City, 🇵🇭</p>
+              <p className="text-xs" style={{ color: '#4a4a6a' }}>Libre kasi beta pa kami — kailangan namin ng feedback mula sa real na Filipino operators. Walang credit card. 🇵🇭</p>
             </div>
 
             {/* Right — dashboard screenshot */}
@@ -302,6 +302,53 @@ export default function HomePage() {
               </button>
             </div>
           </div>
+        </div>
+      </section>
+
+      {/* ── Value Stack ── */}
+      <section className="py-20 px-5" style={{ background: '#080810' }}>
+        <div className="max-w-3xl mx-auto">
+          <div className="text-center mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest mb-3" style={{ color: '#f59e0b' }}>What you get — for free</p>
+            <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">Everything a professional event supplier needs</h2>
+            <p style={{ color: '#6b7280' }}>No trial period. No credit card. No catch. Here&apos;s exactly what&apos;s included.</p>
+          </div>
+
+          <div className="rounded-2xl overflow-hidden mb-6" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+            {[
+              { item: 'Craftifyle CRM — unlimited leads, bookings, and invoices', value: '₱800/mo value', color: '#7c6ff7' },
+              { item: 'Crafty AI — 24/7 Taglish replies to Messenger inquiries', value: '₱2,000/mo value', color: '#8b5cf6' },
+              { item: 'Taglish Follow-Up Script Pack — 5 ready-to-copy Messenger scripts', value: '₱1,500 value', color: '#6366f1' },
+              { item: 'Pre-loaded package templates with real PH prices', value: '₱2,000 value', color: '#a78bfa' },
+              { item: 'Google Calendar sync on every confirmed booking', value: '₱500/mo value', color: '#818cf8' },
+              { item: '"Can\'t create your first booking in 10 minutes? We\'ll set it up for you." Guarantee', value: 'Zero effort risk', color: '#10b981' },
+              { item: '"Your data is yours. Export to Excel anytime, forever." Guarantee', value: 'Zero lock-in', color: '#10b981' },
+            ].map((row, i) => (
+              <div key={i} className="flex items-center justify-between px-5 py-4 gap-4"
+                style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                <div className="flex items-start gap-3 min-w-0">
+                  <span className="mt-0.5 shrink-0" style={{ color: row.color }}>✓</span>
+                  <p className="text-sm" style={{ color: '#9ca3af' }}>{row.item}</p>
+                </div>
+                <span className="text-xs font-semibold shrink-0" style={{ color: row.color }}>{row.value}</span>
+              </div>
+            ))}
+            <div className="px-5 py-5" style={{ borderTop: '1px solid #1a1a28', background: 'rgba(245,158,11,0.04)' }}>
+              <div className="flex items-center justify-between mb-1">
+                <p className="text-sm text-white">Total value</p>
+                <p className="text-lg font-bold" style={{ color: '#f59e0b' }}>₱6,800+</p>
+              </div>
+              <div className="flex items-center justify-between">
+                <p className="text-sm text-white">Your price during beta</p>
+                <p className="text-2xl font-bold text-white">Free</p>
+              </div>
+            </div>
+          </div>
+
+          <p className="text-center text-sm leading-relaxed" style={{ color: '#6b7280' }}>
+            It&apos;s free because we&apos;re in beta — we&apos;re building this in Zamboanga and we need real feedback from Filipino event suppliers.
+            Help us make it better. <span style={{ color: '#a5b4fc' }}>Libre talaga ito.</span>
+          </p>
         </div>
       </section>
 
