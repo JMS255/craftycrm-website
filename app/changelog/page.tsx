@@ -18,6 +18,8 @@ const releases = [
       { type: 'fix', text: 'Onboarding checklist not dismissing after all steps done — now auto-dismisses 2 seconds after completion.' },
       { type: 'fix', text: 'Mobile nav dark background showing in light mode — now theme-aware via CSS variables.' },
       { type: 'improved', text: 'Mobile nav active tab — replaced top indicator line with subtle background fill, cleaner look.' },
+      { type: 'fix', text: 'Revenue strip numbers overflowing/truncating on mobile — replaced full numbers with abbreviated format (₱27,150 → ₱27.1k). Fits 3 columns cleanly on 360px screens (most common PH budget Android).' },
+      { type: 'improved', text: 'Booking mobile card touch targets — increased from py-3 to py-4 (44px+ per Apple HIG minimum). Easier to tap on budget Android phones.' },
     ],
   },
   {

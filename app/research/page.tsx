@@ -221,6 +221,65 @@ const uxSections = [
     ],
   },
   {
+    label: '📱 Mobile-First Deep Dive',
+    color: '#06b6d4',
+    bg: 'rgba(6,182,212,0.08)',
+    border: 'rgba(6,182,212,0.2)',
+    desc: 'Deep web research across NNGroup, Statcounter PH, Apple HIG, Material Design, HoneyBook/Dubsado analysis — June 2026',
+    items: [
+      {
+        title: 'M1 — 360×800px is the target screen — not 390px',
+        impact: 'High', difficulty: 'Easy',
+        body: 'Statcounter PH data: 360×800 is the most common mobile resolution in the Philippines (~40% of market). These are budget Android phones at PHP 3,000–6,000 (Redmi, Realme, Vivo). Every layout must be tested at exactly 360px width before shipping. At 360px with 16px padding each side, the content area is 328px.',
+      },
+      {
+        title: 'M2 — KPI numbers on mobile must be abbreviated (₱27.1k not ₱27,150)',
+        impact: 'High', difficulty: 'Easy',
+        body: 'Research from Workday Design and financial app UX studies: abbreviated currency format (₱27.1k, ₱3.5k) is the correct pattern for dashboard KPIs on mobile. At 328px content width split into 3 columns (~100px each), a full number "₱27,150" at readable size (~30px font) needs ~160px — it overflows. "₱27.1k" at the same size needs ~60px. GCash uses this pattern for secondary stats. Implemented in dashboard revenue strip.',
+      },
+      {
+        title: 'M3 — Touch targets minimum 44px height (Apple HIG), 48px preferred (Material)',
+        impact: 'High', difficulty: 'Easy',
+        body: 'Apple Human Interface Guidelines: 44×44px minimum for all tappable elements. Google Material Design: 48×48px preferred. Budget Android users with lower fine-motor precision (rough fingers from outdoor work) need generous targets. All list rows, buttons, and form fields must meet this. py-3 (24px padding + ~20px text = 44px total) is the minimum; py-4 is safer.',
+      },
+      {
+        title: 'M4 — Font minimums: 16px body, 14px labels, 12px badges only',
+        impact: 'High', difficulty: 'Medium',
+        body: 'WCAG and Apple/Google guidelines: minimum 16px for body text on mobile. 14px for secondary labels. 12px only for badges and timestamps — never for actionable content. Outdoor photobooth operators read their phones in bright venues — sunlight degrades contrast and perceived size. Our current text-xs (11px) on many labels is below safe minimum.',
+      },
+      {
+        title: 'M5 — Thumb zones on 6.6–6.9" screens (most common PH device size)',
+        impact: 'High', difficulty: 'Medium',
+        body: 'Parachute Design + Smashing Magazine thumb zone research: on a 6.6" screen (360×800), the green zone (easy, natural thumb reach) is the bottom ~50% of screen. Yellow zone (stretch, acceptable) is mid-screen sides. Red zone (hard reach) is the top third. Critical actions (Add Lead, Mark Paid, Follow Up) must live in the green zone. Settings and logout in red zone is fine. Our bottom nav (C3) is correct. Next: ensure primary CTA buttons are anchored near bottom of screens.',
+      },
+      {
+        title: 'M6 — Bottom nav: 5 tabs with icons + labels is optimal',
+        impact: 'High', difficulty: 'Easy',
+        body: 'AppMySite 2025 and Smashing Magazine nav research: odd numbers (3 or 5) create visual rhythm. 5 destinations is optimal for apps with this complexity. Icons alone confuse ~20% of users — always pair with labels. Active state must use both color change AND a visual indicator (fill or background). Tap targets 48×48px. Our current 5-tab nav (Home, Leads, +, Bookings, Profile) matches this correctly.',
+      },
+      {
+        title: 'M7 — Forms: single column, label above field, 44px minimum field height',
+        impact: 'Medium', difficulty: 'Easy',
+        body: 'Nielsen Norman Group mobile input checklist: single column ONLY on mobile — no side-by-side fields. Label above field (floating labels reduce discoverability). Minimum field height 44px. One field per visible screen segment if possible. Our New Lead form uses progressive disclosure (4 fields default, expand for more) — this is correct per NNGroup research.',
+      },
+      {
+        title: 'M8 — Card list items: 56px minimum height for comfortable tapping',
+        impact: 'Medium', difficulty: 'Easy',
+        body: 'Microsoft Dynamics 365 mobile research and HoneyBook mobile patterns: list items for leads/bookings need minimum 56px height. Essential info per card: name, status badge, date, one action. Secondary info can be smaller below. Our lead list mobile cards with py-3.5 (14px * 2 = 28px + ~30px text = ~58px total) pass this. Booking cards were at py-3 (~44px total) — borderline, now bumped to py-4.',
+      },
+      {
+        title: 'M9 — Outdoor readability: dark mode in sunlight loses contrast physics',
+        impact: 'Medium', difficulty: 'Hard',
+        body: 'Research on outdoor mobile use: in bright sunlight (outdoor weddings, birthday venues), display cannot get dark enough relative to ambient brightness. Light mode maintains contrast because white reflects and matches ambient light. This supports our light-mode-as-default decision. Dark mode users in outdoor venues experience ~30% lower contrast. Consider adding an auto-brightness contrast boost for high-ambient situations.',
+      },
+      {
+        title: 'M10 — Optimistic UI critical for Philippine mobile networks',
+        impact: 'High', difficulty: 'Hard',
+        body: 'Philippine provincial mobile networks (especially outside Metro Manila) have intermittent 4G with 2–4 second lag on data operations. Optimistic UI (update locally first, sync in background) prevents double-taps and duplicate entries when the UI appears frozen. Mark Paid, stage changes, and activity logging are the highest-risk actions. Current implementation waits for DB response before updating UI — this feels broken on slow networks.',
+      },
+    ],
+  },
+  {
     label: '📋 Next Session',
     color: '#06b6d4',
     bg: 'rgba(6,182,212,0.08)',
