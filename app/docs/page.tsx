@@ -139,8 +139,24 @@ const sections = [
     icon: '✅',
     content: [
       {
+        heading: 'Balance Due This Week — dashboard alert',
+        body: 'The dashboard now shows an amber "💰 Balance Due This Week" card listing every confirmed booking where the event is within 7 days and the balance hasn\'t been collected. Click any row to go straight to the booking. Never miss a collection again.',
+      },
+      {
+        heading: 'Swipe-to-action on mobile lead cards',
+        body: 'On mobile, swipe a lead card right to mark it as Contacted, or swipe left to archive it as Lost. A colored overlay shows the action as you swipe. An undo button appears for 4 seconds after every swipe so you can reverse it instantly.',
+      },
+      {
+        heading: 'Onboarding checklist on dashboard',
+        body: 'New users now see a 3-step checklist pinned to the dashboard after their first lead: Add a lead · Try Crafty AI · Set up your profile. Progress bar fills as each step is completed. Dismisses permanently when done.',
+      },
+      {
+        heading: 'Stage hints on lead detail',
+        body: 'The pipeline progress bar on every lead detail page now shows a contextual hint below it — telling you exactly what to do next at each stage. "You\'ve made contact. Follow up in 2–3 days if no reply yet." No more wondering what the next step is.',
+      },
+      {
         heading: 'Paste DM → Crafty creates the lead',
-        body: 'Open the chat widget → ⚡ CRM Actions tab → click the 📋 button. Paste the raw client DM ("Hi! Available ba kayo July 20? Birthday ng anak ko, 80 guests"). Crafty extracts the details and creates the lead. No form, no manual typing.',
+        body: 'Open the chat widget → ⚡ Do Something tab → click the 📋 button. Paste the raw client DM ("Hi! Available ba kayo July 20? Birthday ng anak ko, 80 guests"). Crafty extracts the details and creates the lead. No form, no manual typing.',
       },
       {
         heading: 'Cold Lead Alerts',
@@ -156,19 +172,11 @@ const sections = [
       },
       {
         heading: 'Kanban board view',
-        body: 'The Leads page now has a Board/List toggle at the top right. Board mode shows 6 columns (New → Contacted → Quoted → Negotiating → Booked → Lost). Drag any lead card to a new column to move it through the pipeline — updates instantly in the database.',
-      },
-      {
-        heading: 'Dashboard charts',
-        body: 'A Trends section on the dashboard shows two charts: a bar chart of bookings per month for the current year, and a source donut showing which channels (Facebook, Instagram, referral, etc.) your leads are coming from.',
+        body: 'The Leads page now has a Board/List toggle at the top right. Board mode shows 6 columns (New → Contacted → Quoted → Negotiating → Booked → Lost). Drag any lead card to a new column to move it through the pipeline on desktop. On mobile, use the stage tabs and Move buttons.',
       },
       {
         heading: 'Booking confirmation smart link',
-        body: 'On any booking detail page, click the 🔗 Share Link button. It copies a public URL you can send to your client. They open it and see the event name, date, venue, package price, payment status, your GCash number (0993-632-4512), and your cancellation terms. No login required.',
-      },
-      {
-        heading: 'SMS follow-up via Semaphore',
-        body: 'The daily follow-up cron now sends an SMS to leads that have a phone number but no Messenger. Message is in Taglish: "Hi [Name]! Baka nalimutan lang. Available pa kami para sa iyong event." Costs ₱0.50 per message.',
+        body: 'On any booking detail page, click the 🔗 Share Link button. It copies a public URL you can send to your client. They open it and see the event name, date, venue, package price, payment status, your GCash number, and your cancellation terms. No login required.',
       },
       {
         heading: 'AI next-action badges',
@@ -186,16 +194,16 @@ const sections = [
     icon: '⚡',
     content: [
       {
-        heading: 'Custom package builder',
-        body: 'Click to build a quote: pick your base package (Photobooth, Photography, Bundle, Premium), toggle add-ons (extra hour ₱800, magnet prints ₱1,500), and the total auto-calculates. Flows directly into the booking record and invoice. Crafty can also use your defined packages by name when creating bookings via chat.',
-      },
-      {
-        heading: 'Crafty AI training',
-        body: 'Configure Crafty\'s packages, pricing, personality, and business details from inside the app — no code changes required. Coming when open beta launches.',
-      },
-      {
         heading: 'GCash / PayMongo payment links',
         body: 'Auto-generate a real payment link per booking. When the client pays, a webhook automatically marks the deposit as paid in the CRM.',
+      },
+      {
+        heading: 'Booking contracts + e-sign',
+        body: 'Send a digital contract to your client. They tap "I agree" and the timestamp is stored on the booking. Prevents cancellation disputes.',
+      },
+      {
+        heading: 'Team mode',
+        body: 'Add staff members with role-based access — photographer, coordinator, admin. Each person sees only what they need.',
       },
     ],
   },

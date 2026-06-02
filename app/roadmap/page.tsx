@@ -44,11 +44,16 @@ const quarters = [
     status: 'current',
     color: '#a78bfa',
     items: [
+      { status: 'done', text: 'Balance Due This Week alert — dashboard card listing upcoming events with unpaid balances ≤7 days away' },
+      { status: 'done', text: 'Swipe-to-action on mobile lead cards — right=contacted, left=archive, 4s undo snackbar' },
+      { status: 'done', text: 'Onboarding checklist — 3-step card on dashboard after first lead, disappears when complete' },
+      { status: 'done', text: 'Stage hints on lead detail — contextual next-action text per pipeline stage' },
+      { status: 'done', text: 'Taglish Script Pack — free /scripts page with 5 copy-ready Messenger scripts, no signup' },
+      { status: 'done', text: 'Mobile nav polish — backdrop-blur, safe-area-inset, active tab indicator' },
       { status: 'planned', text: 'GCash / PayMongo payment links — auto-generate a payment link per booking; webhook auto-marks deposit paid when client pays' },
-      { status: 'planned', text: 'Unified conversations inbox — all Messenger threads in one place' },
-      { status: 'planned', text: 'Custom package builder — name, price, inclusions, add-ons' },
       { status: 'planned', text: 'Booking contracts — digital contract with client e-sign acknowledgment attached to each booking' },
       { status: 'planned', text: 'Team mode — add staff members with role-based access' },
+      { status: 'planned', text: 'Unified conversations inbox — all Messenger threads in one place' },
     ],
   },
   {

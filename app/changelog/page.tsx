@@ -1,5 +1,23 @@
 const releases = [
   {
+    version: '0.7.0',
+    date: 'June 2, 2026',
+    tag: 'Hormozi Sprint',
+    tagColor: '#f59e0b',
+    changes: [
+      { type: 'new', text: 'Balance Due This Week — amber alert card on dashboard listing bookings with event ≤7 days away and unpaid balance. Click to go straight to the booking.' },
+      { type: 'new', text: 'Swipe-to-action on mobile lead cards — swipe right to mark Contacted, swipe left to archive as Lost. 4-second undo snackbar after every action.' },
+      { type: 'new', text: 'Onboarding checklist on dashboard — 3-step card (Add lead · Try Crafty · Set up profile) shown after first lead. Progress bar, dismisses permanently when complete.' },
+      { type: 'new', text: 'Stage hints on lead detail — contextual next-step hint shown below the pipeline progress bar at every stage.' },
+      { type: 'new', text: '/scripts page — free Taglish Follow-Up Script Pack with 5 copy-ready Messenger scripts. No signup. Shareable in FB groups.' },
+      { type: 'improved', text: 'Homepage — cost-of-inaction hero copy, Grand Slam value stack section (₱6,800+ value shown at free), Taglish libre paradox CTA, outcome-focused steps.' },
+      { type: 'improved', text: 'Mobile nav — backdrop-blur glass effect, safe-area-inset-bottom for iPhone notch, active tab indicator line.' },
+      { type: 'improved', text: 'Crafty chat tabs renamed — "💬 Ask for Advice" and "⚡ Do Something" for clarity.' },
+      { type: 'fix', text: 'Packages & Pricing save stuck on "Saving…" — replaced upsert (deadlock on new rows) with delete-then-insert. Added try/finally so the saving state always resets.' },
+      { type: 'fix', text: 'Packages save crash "Cannot read properties of null (reading trim)" — optional chaining on description field.' },
+    ],
+  },
+  {
     version: '0.6.0',
     date: 'June 2, 2026',
     tag: 'Full Redesign',
