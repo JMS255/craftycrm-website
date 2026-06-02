@@ -15,6 +15,9 @@ const releases = [
       { type: 'improved', text: 'Crafty chat tabs renamed — "💬 Ask for Advice" and "⚡ Do Something" for clarity.' },
       { type: 'fix', text: 'Packages & Pricing save stuck on "Saving…" — replaced upsert (deadlock on new rows) with delete-then-insert. Added try/finally so the saving state always resets.' },
       { type: 'fix', text: 'Packages save crash "Cannot read properties of null (reading trim)" — optional chaining on description field.' },
+      { type: 'fix', text: 'Onboarding checklist not dismissing after all steps done — now auto-dismisses 2 seconds after completion.' },
+      { type: 'fix', text: 'Mobile nav dark background showing in light mode — now theme-aware via CSS variables.' },
+      { type: 'improved', text: 'Mobile nav active tab — replaced top indicator line with subtle background fill, cleaner look.' },
     ],
   },
   {
