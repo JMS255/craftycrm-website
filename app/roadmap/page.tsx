@@ -40,8 +40,8 @@ const quarters = [
     ],
   },
   {
-    label: 'Sprint 3 — August 2026',
-    status: 'current',
+    label: 'Sprint 3 — June 2026',
+    status: 'done',
     color: '#a78bfa',
     items: [
       { status: 'done', text: 'Balance Due This Week alert — dashboard card listing upcoming events with unpaid balances ≤7 days away' },
@@ -49,13 +49,13 @@ const quarters = [
       { status: 'done', text: 'Onboarding checklist — 3-step card on dashboard after first lead, disappears when complete' },
       { status: 'done', text: 'Stage hints on lead detail — contextual next-action text per pipeline stage' },
       { status: 'done', text: 'Taglish Script Pack — free /scripts page with 5 copy-ready Messenger scripts, no signup' },
-      { status: 'done', text: 'Mobile nav polish — backdrop-blur, safe-area-inset, active tab indicator' },
-      { status: 'planned', text: '[Priority 1] Optimistic UI — Mark Paid, stage changes, and activity logging update instantly without waiting for the database. Critical for Filipino users on slow provincial networks where current 2–4s DB wait makes the app feel broken.' },
-      { status: 'planned', text: '[Priority 2] GCash / PayMongo payment links — auto-generate a payment link per booking; webhook auto-marks deposit paid when client pays' },
-      { status: 'planned', text: '[Priority 3] Booking contracts — digital contract with client e-sign acknowledgment attached to each booking' },
-      { status: 'planned', text: '[Priority 4] Facebook Login as primary sign-in — blocked until Facebook OAuth app credentials + Supabase config are set up' },
-      { status: 'planned', text: '[Priority 5] Team mode — add staff members with role-based access' },
-      { status: 'planned', text: '[Priority 6] Unified conversations inbox — all Messenger threads in one place' },
+      { status: 'done', text: 'Mobile nav — backdrop-blur, safe-area-inset, theme-aware background, active tab indicator' },
+      { status: 'done', text: 'Optimistic UI — Mark Paid, stage changes, activity logging all instant. No DB wait.' },
+      { status: 'done', text: 'PayMongo payment links — built and ready; activate when PayMongo account is set up' },
+      { status: 'done', text: 'Booking contracts + e-sign — client opens a link, types name, taps agree. Timestamp stored.' },
+      { status: 'done', text: 'Facebook Login — button live on login + signup. Activate by configuring Supabase OAuth.' },
+      { status: 'done', text: 'Team mode — invite staff via link. Staff see Leads + Bookings only.' },
+      { status: 'done', text: 'Messenger inbox — all conversations in one view, split by needs-reply vs Crafty-handled' },
     ],
   },
   {
@@ -91,10 +91,10 @@ export default function RoadmapPage() {
       <div className="rounded-2xl p-6 mb-12" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
         <div className="flex items-center justify-between mb-3 flex-wrap gap-3">
           <p className="text-sm font-semibold text-white">Open Beta Readiness</p>
-          <span className="text-2xl font-bold" style={{ color: '#a78bfa' }}>68%</span>
+          <span className="text-2xl font-bold" style={{ color: '#a78bfa' }}>90%</span>
         </div>
         <div className="h-2 rounded-full overflow-hidden mb-5" style={{ background: '#1e1e2e' }}>
-          <div className="h-full rounded-full" style={{ width: '68%', background: 'linear-gradient(90deg, #6366f1, #a78bfa)' }} />
+          <div className="h-full rounded-full" style={{ width: '90%', background: 'linear-gradient(90deg, #6366f1, #a78bfa)' }} />
         </div>
         <div className="space-y-2 mb-5">
           {[
@@ -117,7 +117,7 @@ export default function RoadmapPage() {
           ))}
         </div>
         <p className="text-xs leading-relaxed" style={{ color: '#4a4a6a' }}>
-          Core CRM is production-ready. The Messenger bot is blocked by a Meta BIR requirement (external). Open beta without the bot is 2–3 sessions away — Optimistic UI first, then remove the invite code.
+          All planned features are built and shipped. The remaining 10% is external: Meta BIR approval for the Messenger bot, and a 15-minute Facebook OAuth setup for Facebook Login. Core CRM is production-ready — remove the invite code to open beta now.
         </p>
       </div>
 

@@ -1,5 +1,19 @@
 const releases = [
   {
+    version: '0.8.0',
+    date: 'June 2, 2026',
+    tag: 'Sprint 3 Complete',
+    tagColor: '#a78bfa',
+    changes: [
+      { type: 'new', text: 'Messenger inbox (/inbox) — all Messenger conversations in one view. Split into "Needs a reply" (client sent last) and "Crafty handled". Shows last message preview, lead stage, time ago. Red border on rows needing attention.' },
+      { type: 'new', text: 'Booking contracts + e-sign — Copy Contract Link from any booking. Client opens the page, reads 6-clause service agreement, types full name, taps "I Agree". Timestamp stored on booking.' },
+      { type: 'new', text: 'Team mode — invite staff by email. They click a link, accept, and can see Leads + Bookings. Staff cannot access Finances, Ads, or Settings.' },
+      { type: 'new', text: 'Facebook Login — "Continue with Facebook" button live on login and signup as primary CTA. Activate by configuring Supabase OAuth + Facebook Developer App.' },
+      { type: 'new', text: 'PayMongo payment links — built and hidden. Activate when PayMongo account is set up. Client pays via GCash/Maya/card, deposit auto-marked paid via webhook.' },
+      { type: 'improved', text: 'Optimistic UI — Mark Paid, booking status, lead stage changes, and activity logging all update instantly. DB syncs in background. Reverts on error.' },
+    ],
+  },
+  {
     version: '0.7.0',
     date: 'June 2, 2026',
     tag: 'Hormozi Sprint',
