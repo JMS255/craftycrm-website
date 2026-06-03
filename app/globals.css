@@ -24,3 +24,56 @@ body {
 ::-webkit-scrollbar { width: 4px; }
 ::-webkit-scrollbar-track { background: transparent; }
 ::-webkit-scrollbar-thumb { background: #2a2a3a; border-radius: 999px; }
+
+@media print {
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+
+  nav, header, footer, .print\:hidden { display: none !important; }
+
+  html, body {
+    background: #ffffff !important;
+    color: #111118 !important;
+    font-size: 12pt;
+  }
+
+  h1 { font-size: 20pt; color: #111118 !important; margin-bottom: 8pt; }
+  h2 { font-size: 14pt; color: #111118 !important; margin-top: 16pt; margin-bottom: 6pt; border-bottom: 1pt solid #e5e7eb !important; padding-bottom: 4pt; }
+  p, span, li { color: #374151 !important; }
+
+  /* Cards become clean white boxes with light border */
+  div[style*="background: #111118"],
+  div[style*="background:#111118"] {
+    background: #f9fafb !important;
+    border: 1pt solid #e5e7eb !important;
+    border-radius: 6pt !important;
+  }
+
+  /* Accent boxes */
+  div[style*="rgba(99,102,241"] {
+    background: #eff6ff !important;
+    border: 1pt solid #bfdbfe !important;
+  }
+  div[style*="rgba(16,185,129"] {
+    background: #f0fdf4 !important;
+    border: 1pt solid #bbf7d0 !important;
+  }
+  div[style*="rgba(245,158,11"] {
+    background: #fffbeb !important;
+    border: 1pt solid #fde68a !important;
+  }
+
+  /* Accent text colors → dark equivalents */
+  span[style*="color: #a5b4fc"],
+  p[style*="color: #a5b4fc"],
+  a[style*="color: #a5b4fc"] { color: #4338ca !important; }
+  span[style*="color: #9ca3af"],
+  p[style*="color: #9ca3af"] { color: #374151 !important; }
+  span[style*="color: #6b7280"],
+  p[style*="color: #6b7280"] { color: #6b7280 !important; }
+
+  /* Page break control */
+  h2 { page-break-after: avoid; }
+  div { page-break-inside: avoid; }
+
+  a { color: #4338ca !important; text-decoration: underline; }
+}
