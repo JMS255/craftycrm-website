@@ -1,5 +1,3 @@
-'use client'
-
 const resources = [
   {
     id: 'filipino-solopreneur-crm',
@@ -7,7 +5,8 @@ const resources = [
     title: 'The Filipino Service Business Owner: A Market Research Brief',
     desc: 'Deep research on the ₱134.7M Philippine CRM market, why 47–70% of CRM deployments fail, and the exact gap Crafty CRM fills. Includes competitive analysis and positioning playbook.',
     tags: ['Market Research', 'Philippines', 'CRM'],
-    pages: '8 pages',
+    pages: '4 pages',
+    pdf: '/downloads/crafty-crm-market-research.pdf',
     color: '#6366f1',
     bg: 'rgba(99,102,241,0.08)',
     border: 'rgba(99,102,241,0.2)',
@@ -25,7 +24,8 @@ const resources = [
     title: 'How to Get Your First 100 Beta Users as a Solo Filipino Developer',
     desc: 'A 90-day, introvert-friendly launch playbook based on research across 20+ sources. Facebook groups, Taglish content strategy, give-first tactics, and the weekly 100-minute rhythm.',
     tags: ['Launch Strategy', 'Marketing', 'Indie Dev'],
-    pages: '6 pages',
+    pages: '4 pages',
+    pdf: '/downloads/crafty-crm-launch-playbook.pdf',
     color: '#10b981',
     bg: 'rgba(16,185,129,0.08)',
     border: 'rgba(16,185,129,0.2)',
@@ -43,7 +43,8 @@ const resources = [
     title: 'Mobile UX for Philippine Service Businesses: A Research Brief',
     desc: '10 research-backed findings on designing for 360px Android screens, outdoor use, thumb zones, touch targets, and why light mode wins in the Filipino context.',
     tags: ['Mobile UX', 'Philippines', 'Design'],
-    pages: '5 pages',
+    pages: '3 pages',
+    pdf: '/downloads/crafty-crm-mobile-ux-ph.pdf',
     color: '#f59e0b',
     bg: 'rgba(245,158,11,0.08)',
     border: 'rgba(245,158,11,0.2)',
@@ -102,11 +103,18 @@ export default function ResourcesPage() {
                   ))}
                 </div>
 
-                <a href={r.href}
-                  className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-xl transition-opacity hover:opacity-80"
-                  style={{ background: r.bg, color: r.color, border: `1px solid ${r.border}` }}>
-                  📥 Read & Download PDF
-                </a>
+                <div className="flex items-center gap-3 flex-wrap">
+                  <a href={r.href}
+                    className="inline-flex items-center gap-2 text-sm font-medium px-4 py-2.5 rounded-xl transition-opacity hover:opacity-80"
+                    style={{ background: 'transparent', color: r.color, border: `1px solid ${r.border}` }}>
+                    Read online →
+                  </a>
+                  <a href={r.pdf} download
+                    className="inline-flex items-center gap-2 text-sm font-semibold px-4 py-2.5 rounded-xl transition-opacity hover:opacity-80"
+                    style={{ background: r.bg, color: r.color, border: `1px solid ${r.border}` }}>
+                    📥 Download PDF
+                  </a>
+                </div>
               </div>
             </div>
           </div>
