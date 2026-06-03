@@ -2,7 +2,7 @@
 
 import { useState } from 'react'
 
-type Tab = 'features' | 'ux' | 'ui' | 'market'
+type Tab = 'features' | 'ux' | 'ui' | 'market' | 'launch'
 
 const featureSections = [
   {
@@ -449,9 +449,20 @@ export default function ResearchPage() {
           style={{
             background: tab === 'market' ? 'rgba(99,102,241,0.15)' : 'transparent',
             color: tab === 'market' ? '#a5b4fc' : '#6b7280',
+            borderRight: '1px solid #1e1e2e',
           }}
         >
           Market Research
+        </button>
+        <button
+          onClick={() => setTab('launch')}
+          className="flex-1 py-2.5 text-sm font-medium transition-colors"
+          style={{
+            background: tab === 'launch' ? 'rgba(99,102,241,0.15)' : 'transparent',
+            color: tab === 'launch' ? '#a5b4fc' : '#6b7280',
+          }}
+        >
+          🚀 Launch
         </button>
       </div>
 
@@ -899,6 +910,162 @@ export default function ResearchPage() {
             </div>
           </div>
 
+        </div>
+      )}
+
+      {/* Launch Research */}
+      {tab === 'launch' && (
+        <div className="space-y-10">
+          <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+            <p className="text-sm font-semibold text-white mb-2">Research basis</p>
+            <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>
+              Deep research across 20+ sources on how solo developers have successfully launched web apps and acquired beta users — specifically for introvert founders targeting Filipino solopreneurs. Sources include Indie Hackers, Baymard Institute, ACM Digital Library (GCash/Maya usability study), DataReportal Philippines 2024, and real launch case studies.
+            </p>
+            <div className="grid grid-cols-2 sm:grid-cols-4 gap-3 mt-4">
+              {[
+                { val: '92%', label: 'Filipinos trust peer recommendations over ads' },
+                { val: '3–8×', label: 'Indie Hackers converts better than Product Hunt' },
+                { val: '100 min', label: 'Weekly effort needed — no camera required' },
+                { val: '30–50', label: 'Target beta users in first 90 days' },
+              ].map(s => (
+                <div key={s.val} className="rounded-xl p-3 text-center" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.15)' }}>
+                  <p className="text-xl font-bold" style={{ color: '#818cf8' }}>{s.val}</p>
+                  <p className="text-xs mt-1" style={{ color: '#6b7280' }}>{s.label}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Where Filipino Service Solopreneurs Actually Are</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Don't spray. Find the exact ponds. These are the highest-density, most relevant Facebook Groups.</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { group: 'Photobooth Suppliers Philippines', type: 'Photobooth', why: 'Operators exactly like the founder — highest trust, lowest barrier' },
+                { group: 'Photobooth Ideas Philippines', type: 'Photobooth', why: 'Active operators sharing workflows — perfect for value posts' },
+                { group: 'Event Photographers and Videographers Philippines', type: 'Photography', why: 'Direct target users, high booking volume, real pain' },
+                { group: 'Freelancers Hub Philippines', type: 'General', why: 'Broad Filipino solopreneur community — good for awareness' },
+                { group: 'Getting Married Wedding Coordinators & Event Planners', type: 'Events', why: '39,000+ members — coordinators manage 10–30 bookings/month' },
+                { group: 'Online Filipino Freelancers', type: 'General', why: 'Original large community, mix of service businesses' },
+              ].map((g, i) => (
+                <div key={g.group} className="px-5 py-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="flex items-start justify-between gap-3 mb-1 flex-wrap">
+                    <p className="text-sm font-semibold text-white">{g.group}</p>
+                    <span className="text-xs px-2 py-0.5 rounded-full shrink-0" style={{ background: 'rgba(99,102,241,0.1)', color: '#a5b4fc' }}>{g.type}</span>
+                  </div>
+                  <p className="text-sm" style={{ color: '#9ca3af' }}>{g.why}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">What Makes Filipinos Trust a New Tool</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>Filipino purchase behavior research — what converts vs. what kills trust.</p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+              <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+                <p className="text-sm font-semibold mb-3" style={{ color: '#34d399' }}>✓ What builds trust</p>
+                <div className="space-y-2">
+                  {[
+                    'Peer recommendation from same profession ("si Maria gamit na niya")',
+                    'Founder is visibly Filipino — "Pinoy-built" is a real differentiator',
+                    'Transparent pricing in pesos, no surprises',
+                    'Quick DM replies — responsiveness = reliability in PH culture',
+                    'Specific social proof: "1,200+ Filipino solopreneurs" not generic',
+                    'Tagalog/Taglish in copy — signals community membership',
+                    'Being from outside Metro Manila builds trust with provincial users',
+                  ].map((t, i) => (
+                    <p key={i} className="text-xs leading-relaxed" style={{ color: '#9ca3af' }}>• {t}</p>
+                  ))}
+                </div>
+              </div>
+              <div className="rounded-2xl p-5" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+                <p className="text-sm font-semibold mb-3" style={{ color: '#f87171' }}>✕ What kills trust</p>
+                <div className="space-y-2">
+                  {[
+                    'Asking for phone number at signup (scam signal in PH)',
+                    'Anonymous tool with no face or name behind it',
+                    'AI-generated or foreign-looking testimonials',
+                    '"Book a demo" CTAs — Filipino solopreneurs don\'t do sales calls',
+                    'English-only corporate copy that sounds formal',
+                    'Stock photos of foreign-looking people',
+                    'Bait-and-switch pricing revealed after signup',
+                  ].map((t, i) => (
+                    <p key={i} className="text-xs leading-relaxed" style={{ color: '#9ca3af' }}>• {t}</p>
+                  ))}
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">The 90-Day Beta User Playbook</h2>
+            <p className="text-sm mb-5" style={{ color: '#6b7280' }}>100 minutes/week. No camera. All written. All async. Introvert-compatible.</p>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                {
+                  phase: 'Days 1–14', goal: '5 beta users', color: '#ef4444',
+                  body: 'Personal outreach only. List 10 people you know — photographers, photobooth operators, coordinators. Message each personally in Messenger: "Kumusta? Paano mo nini-manage ang bookings mo?" Have a real conversation. After they describe their pain: "Eto yung ginawa ko — libre i-try." No pitch, no link first.',
+                },
+                {
+                  phase: 'Days 15–30', goal: 'Community seeding', color: '#f97316',
+                  body: 'Join 3 Facebook groups. Spend week 1 lurking — understand the vocabulary. Start answering questions helpfully with zero product mention for 2 weeks. Post one free resource (booking contract template, rate sheet) in each group.',
+                },
+                {
+                  phase: 'Days 31–60', goal: '10 more beta users', color: '#fbbf24',
+                  body: 'Soft product intro post after you\'ve given value: "Filipino developer ako from Zamboanga. Nagawa ko na simple na booking tracker para sa photographers. Open beta, libre. Gusto ninyong subukan?" Respond to every comment in Taglish.',
+                },
+                {
+                  phase: 'Days 61–90', goal: '30–50 beta users', color: '#10b981',
+                  body: 'Ask first users for referrals: "May kakilala kang photographer na puwede naming tulungan?" Post one honest founder story on Indie Hackers (23% conversion rate vs 3% for Product Hunt). Create a small Messenger group for beta testers — Filipinos are communal and will help each other.',
+                },
+              ].map((p, i) => (
+                <div key={p.phase} className="px-5 py-4 flex gap-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <div className="shrink-0">
+                    <p className="text-xs font-bold" style={{ color: p.color }}>{p.phase}</p>
+                    <p className="text-xs mt-0.5" style={{ color: '#4a4a6a' }}>Goal: {p.goal}</p>
+                  </div>
+                  <p className="text-sm leading-relaxed flex-1" style={{ color: '#9ca3af' }}>{p.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div>
+            <h2 className="text-xl font-bold text-white mb-2">Why Introverts Actually Have an Advantage</h2>
+            <div className="rounded-2xl overflow-hidden" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
+              {[
+                { title: 'Written 1-on-1 is the highest-converting channel', body: 'Every successful indie hacker got their first 10 users from direct personal conversations — not platforms. This is 1-on-1 written Messenger chat, not stage performance. Introverts prefer this format naturally.' },
+                { title: 'Taglish writing is your superpower', body: 'You write how your users talk. Pure English sounds corporate. Pure Filipino sounds overly informal. Taglish signals "community member." Your natural writing voice is your marketing voice.' },
+                { title: 'Being from Zamboanga is a trust accelerator', body: 'Most Philippine tech is Metro Manila-centric. Provincial founders are trusted more by non-Manila users. Non-Manila is the majority of your market. Mentioning "Zamboangueño ako" in a Filipino group immediately creates regional solidarity.' },
+                { title: 'INFJ empathy = copywriting superpower', body: 'INFJs understand their users\' inner world better than those users can articulate it. Use that to write posts that make people feel seen, not sold to. "Pagod ka na bang mag-reply sa lahat ng DM tapos nakakalimutan mo pa?" — that\'s INFJ copy.' },
+                { title: 'You don\'t need to market yourself — market the problem', body: 'You\'re not asking people to care about you. You\'re asking Filipino photographers if they\'re tired of losing track of leads in Messenger threads. That\'s a completely different ask.' },
+              ].map((item, i) => (
+                <div key={item.title} className="px-5 py-4" style={{ borderTop: i > 0 ? '1px solid #1a1a28' : 'none' }}>
+                  <p className="text-sm font-semibold text-white mb-1">{item.title}</p>
+                  <p className="text-sm leading-relaxed" style={{ color: '#9ca3af' }}>{item.body}</p>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          <div className="rounded-2xl p-5" style={{ background: 'rgba(99,102,241,0.08)', border: '1px solid rgba(99,102,241,0.2)' }}>
+            <p className="text-sm font-semibold text-white mb-3">Weekly Rhythm (100 min/week)</p>
+            <div className="space-y-2">
+              {[
+                { day: 'Mon', task: 'Reply to DMs/comments from last week', time: '20 min' },
+                { day: 'Tue', task: 'Post one value resource or helpful answer in 1–2 groups', time: '30 min' },
+                { day: 'Thu', task: '2–3 personal DMs to potential users or follow-up with existing beta users', time: '20 min' },
+                { day: 'Sat', task: 'Review analytics. Note what users are doing. Ship one small improvement.', time: '30 min' },
+              ].map((r, i) => (
+                <div key={r.day} className="flex items-center gap-3 py-1.5" style={{ borderTop: i > 0 ? '1px solid rgba(99,102,241,0.1)' : 'none' }}>
+                  <span className="text-xs font-bold w-8 shrink-0" style={{ color: '#a5b4fc' }}>{r.day}</span>
+                  <span className="text-xs flex-1" style={{ color: '#9ca3af' }}>{r.task}</span>
+                  <span className="text-xs shrink-0" style={{ color: '#4a4a6a' }}>{r.time}</span>
+                </div>
+              ))}
+            </div>
+          </div>
         </div>
       )}
 

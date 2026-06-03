@@ -139,6 +139,18 @@ const sections = [
     icon: '✅',
     content: [
       {
+        heading: 'Mobile UX improvements',
+        body: 'Touch targets across the app are now at least 44px — easier to tap on any phone. The revenue KPI numbers scale down on small screens so they fit without overflow. Phone fields open the dial pad, number fields open the number pad. Lead rows are taller and the full row is tappable. The bottom nav is solid and anchored — no more floating look.',
+      },
+      {
+        heading: 'Personalized onboarding flow',
+        body: 'When you sign up, Crafty walks you through a 3-screen setup. First, paste a real client DM and watch Crafty extract the lead in real time — name, event, date, venue revealed line by line. Then set your business name and type (7 categories). Then your dashboard unlocks. The whole thing takes under 2 minutes.',
+      },
+      {
+        heading: 'First-session Crafty toasts',
+        body: 'In your first 30 minutes, Crafty quietly celebrates with you as you hit milestones — adding your first lead, making your first stage change, logging your first activity, creating your first booking. Small toasts appear from the Crafty button, use your actual client names, and each fires exactly once.',
+      },
+      {
         heading: 'Balance Due This Week — dashboard alert',
         body: 'The dashboard now shows an amber "💰 Balance Due This Week" card listing every confirmed booking where the event is within 7 days and the balance hasn\'t been collected. Click any row to go straight to the booking. Never miss a collection again.',
       },
@@ -185,6 +197,14 @@ const sections = [
       {
         heading: 'Overdue payment alerts',
         body: 'The Bookings page now shows a red banner listing all bookings where the event date has passed but the balance hasn\'t been collected. Each booking row also shows a payment status badge: Unpaid, Deposit Paid, Fully Paid, or Overdue.',
+      },
+      {
+        heading: 'Free launch + market research resources',
+        body: 'Crafty CRM publishes free research briefs based on real data at craftycrm.vercel.app/resources. Current downloads: "How to Get Your First 100 Beta Users as a Solo Filipino Developer," "The Filipino Service Business Owner: A Market Research Brief," and "Mobile UX for Philippine Service Businesses." No email required — just open and save as PDF.',
+      },
+      {
+        heading: 'Install as a mobile app',
+        body: 'Crafty CRM is a PWA — you can install it directly to your phone\'s home screen. On Android: open in Chrome, tap the 3-dot menu, tap "Add to Home Screen." On iPhone: open in Safari, tap the Share button, tap "Add to Home Screen." It launches full screen with no browser bar, like a native app.',
       },
     ],
   },
