@@ -212,7 +212,7 @@ const sections = [
       },
       {
         heading: 'Free launch + market research resources',
-        body: 'Crafty CRM publishes free research briefs based on real data at craftycrm.vercel.app/resources. Current downloads: "How to Get Your First 100 Beta Users as a Solo Filipino Developer," "The Filipino Service Business Owner: A Market Research Brief," and "Mobile UX for Philippine Service Businesses." No email required — just open and save as PDF.',
+        body: 'Crafty CRM publishes free research briefs based on real data at craftycrm-website.vercel.app/resources. Current downloads: "How to Get Your First 100 Beta Users as a Solo Filipino Developer," "The Filipino Service Business Owner: A Market Research Brief," and "Mobile UX for Philippine Service Businesses." No email required — just open and save as PDF.',
       },
       {
         heading: 'Install as a mobile app',
