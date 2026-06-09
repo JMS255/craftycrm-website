@@ -43,7 +43,7 @@ export default function Navbar() {
           <Link href="https://craftifyle-crm-system.vercel.app/login"
             className="text-sm px-4 py-1.5 rounded-lg transition-colors"
             style={{ color: '#9ca3af' }}>Sign in</Link>
-          <Link href="https://craftifyle-crm-system.vercel.app/signup"
+          <Link href="/signup"
             className="text-sm px-4 py-1.5 rounded-xl font-medium text-white transition-all hover:opacity-90"
             style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}>
             Get started free →
@@ -63,7 +63,7 @@ export default function Navbar() {
             <Link key={l.href} href={l.href} onClick={() => setOpen(false)}
               className="block text-sm py-1.5" style={{ color: '#9ca3af' }}>{l.label}</Link>
           ))}
-          <Link href="https://craftifyle-crm-system.vercel.app/signup"
+          <Link href="/signup"
             onClick={() => setOpen(false)}
             className="block text-sm px-4 py-2 rounded-xl font-medium text-white text-center mt-2"
             style={{ background: 'linear-gradient(135deg, #6366f1, #8b5cf6)' }}>
