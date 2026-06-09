@@ -6,7 +6,7 @@ const sections = [
     content: [
       {
         heading: 'Sign up',
-        body: 'Go to the signup page and enter your invite code. Once signed in, the onboarding tutorial will walk you through the main features. You can reopen it anytime by clicking the ? button in the sidebar.',
+        body: 'Go to the signup page and create your free account. Once signed in, Crafty walks you through a quick 2-minute onboarding — paste a real client DM and watch it extract the lead for you, then set your business name and type. You can reopen the onboarding anytime from your profile.',
       },
       {
         heading: 'Set up your profile',
@@ -138,6 +138,18 @@ const sections = [
     title: 'What\'s New',
     icon: '✅',
     content: [
+      {
+        heading: 'Delete leads and bookings',
+        body: 'You can now delete any lead or booking directly from its detail page. A red Delete button appears in the header next to Edit. A confirmation dialog prevents accidental deletes. No more going to the database manually.',
+      },
+      {
+        heading: 'Lost leads hidden by default',
+        body: 'Leads marked as "Lost" no longer clutter the default list view. They\'re still there — just select the "Lost" filter to see them. Keeps your active pipeline clean without losing the history.',
+      },
+      {
+        heading: 'Crafty AI chat animations',
+        body: 'The chat widget now feels alive. The panel slides up when you open it and slides back down when you close it. The typing indicator shows three bouncing dots instead of plain text. New messages animate in. Suggestion chips stagger in one by one. The FAB button has a subtle glow pulse so it\'s easier to notice.',
+      },
       {
         heading: 'Mobile UX improvements',
         body: 'Touch targets across the app are now at least 44px — easier to tap on any phone. The revenue KPI numbers scale down on small screens so they fit without overflow. Phone fields open the dial pad, number fields open the number pad. Lead rows are taller and the full row is tappable. The bottom nav is solid and anchored — no more floating look.',

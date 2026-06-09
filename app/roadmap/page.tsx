@@ -59,13 +59,26 @@ const quarters = [
     ],
   },
   {
-    label: 'Sprint 4 — In Progress',
-    status: 'current',
+    label: 'Sprint 4 — June 2026',
+    status: 'done',
     color: '#06b6d4',
     items: [
-      { status: 'planned', text: 'Personalized onboarding — AHA moment first: new users paste a real client DM and watch Crafty extract the details line-by-line before any questions are asked. Then 3 quick questions (name, business name, business type) to tailor the app.' },
-      { status: 'planned', text: 'Multi-industry support — Crafty CRM now fits any Filipino service business, not just photobooth. 7 business types (photobooth, printing, travel & tours, graphic design, catering, beauty & wellness, other) each pre-load industry-standard package templates with real PH pricing.' },
-      { status: 'planned', text: 'First-session companion — for the first 30 minutes, Crafty cheers you on like a friend (in Taglish) as you add your first leads, change stages, and make your first booking. Goes quiet after. Not a game — just encouragement while you learn.' },
+      { status: 'done', text: 'Personalized onboarding — AHA moment first: new users paste a real client DM and watch Crafty extract the details line-by-line before any questions are asked. Then 3 quick questions (name, business name, business type) to tailor the app.' },
+      { status: 'done', text: 'Multi-industry support — Crafty CRM now fits any Filipino service business, not just photobooth. 7 business types (photobooth, printing, travel & tours, graphic design, catering, beauty & wellness, other) each pre-load industry-standard package templates with real PH pricing.' },
+      { status: 'done', text: 'First-session companion — for the first 30 minutes, Crafty cheers you on like a friend (in Taglish) as you add your first leads, change stages, and make your first booking. Goes quiet after. Not a game — just encouragement while you learn.' },
+    ],
+  },
+  {
+    label: 'Sprint 5 — June 2026',
+    status: 'done',
+    color: '#f59e0b',
+    items: [
+      { status: 'done', text: 'Firebase Auth migration — Supabase paused the project. Migrated fully to Firebase Auth + Firestore. Login, session cookies, and data isolation all rebuilt. Auto-migrates existing user data on first login.' },
+      { status: 'done', text: 'Delete leads and bookings — red Delete button on detail pages with confirm dialog. No more going to the database manually.' },
+      { status: 'done', text: 'Lost leads hidden by default — lost leads no longer clutter the main list. Still accessible via the Lost filter.' },
+      { status: 'done', text: 'KPI cards mobile layout fix — 2×2 grid on small screens so the 4th card is never cut off.' },
+      { status: 'done', text: 'Crafty AI chat animations — panel slide-up/down, FAB glow pulse, 3-dot typing indicator, message slide-in, suggestion chip stagger.' },
+      { status: 'done', text: 'AI model upgrade — both Crafty modes migrated from Groq to Gemini 2.5 Flash Lite for better quality and reliability.' },
     ],
   },
   {
@@ -101,10 +114,10 @@ export default function RoadmapPage() {
       <div className="rounded-2xl p-6 mb-12" style={{ background: '#111118', border: '1px solid #1e1e2e' }}>
         <div className="flex items-center justify-between mb-3 flex-wrap gap-3">
           <p className="text-sm font-semibold text-white">Open Beta Readiness</p>
-          <span className="text-2xl font-bold" style={{ color: '#a78bfa' }}>90%</span>
+          <span className="text-2xl font-bold" style={{ color: '#a78bfa' }}>95%</span>
         </div>
         <div className="h-2 rounded-full overflow-hidden mb-5" style={{ background: '#1e1e2e' }}>
-          <div className="h-full rounded-full" style={{ width: '90%', background: 'linear-gradient(90deg, #6366f1, #a78bfa)' }} />
+          <div className="h-full rounded-full" style={{ width: '95%', background: 'linear-gradient(90deg, #6366f1, #a78bfa)' }} />
         </div>
         <div className="space-y-2 mb-5">
           {[
@@ -112,7 +125,7 @@ export default function RoadmapPage() {
             { label: 'Crafty AI assistant (paste DM, CRM actions, revenue queries)', done: true },
             { label: 'Mobile-first layout — bottom nav, swipe, kanban, onboarding', done: true },
             { label: 'Dashboard alerts — balance due, cold leads, today\'s actions', done: true },
-            { label: 'Optimistic UI — actions feel instant on slow PH networks', done: false },
+            { label: 'Optimistic UI — actions feel instant on slow PH networks', done: true },
             { label: 'Facebook Login — blocked until OAuth app credentials are set up', done: false },
             { label: 'Crafty Messenger bot — blocked until Meta BIR approval', done: false },
           ].map((item, i) => (
@@ -127,7 +140,7 @@ export default function RoadmapPage() {
           ))}
         </div>
         <p className="text-xs leading-relaxed" style={{ color: '#4a4a6a' }}>
-          All planned features are built and shipped. The remaining 10% is external: Meta BIR approval for the Messenger bot, and a 15-minute Facebook OAuth setup for Facebook Login. Core CRM is production-ready — remove the invite code to open beta now.
+          All planned features are built and shipped. The remaining 5% is external: Meta BIR approval for the Messenger bot, and a Facebook OAuth setup for Facebook Login. Core CRM is production-ready and open beta is live — sign up at the top of this page.
         </p>
       </div>
 
